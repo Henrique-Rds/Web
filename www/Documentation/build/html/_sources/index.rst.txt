@@ -14,8 +14,8 @@ L'utilité et le fonctionnement du site seront aussi expliqués.::
    :caption: Contents:
 
 
-Test
-====
+Test du tableau
+===============
 
 
 Indices and tables
