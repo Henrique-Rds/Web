@@ -9,7 +9,8 @@ L'utilité et le fonctionnement du site seront aussi expliqués.
    :maxdepth: 2
    :caption: Contents:
    
-   test
+   ZRR
+   RegistreHygiene
 
 
 Test du tableau
