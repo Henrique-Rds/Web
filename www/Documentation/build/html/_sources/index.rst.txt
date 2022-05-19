@@ -10,12 +10,12 @@ Dans cette documentation les différentes applications seront expliquées et de 
 L'utilité et le fonctionnement du site seront aussi expliqués.::
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
 
 Test
-==================
+====
 
 
 Indices and tables
