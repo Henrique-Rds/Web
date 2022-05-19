@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-BIienvenue sur la documentation développeur du site de l'institut Clément Ader
+Bienvenue sur la documentation développeur du site de l'institut Clément Ader
 ==============================================================================
 
 Dans cette documentation les différentes applications seront expliquées et de nombreuses informations sur le code seront données.
-L'utilité et le fonctionnement du site seront aussi expliqués. 
+L'utilité et le fonctionnement du site seront aussi expliqués.::
 
 .. toctree::
    :maxdepth: 2
