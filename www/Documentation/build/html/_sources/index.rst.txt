@@ -7,7 +7,8 @@ L'utilité et le fonctionnement du site seront aussi expliqués.
 
 .. toctree::
    :maxdepth: 2
-
+   :caption: Contents:
+   
    test
 
 
