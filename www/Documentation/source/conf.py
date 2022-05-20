@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'Documentation'
+project = 'Documentation développeur ICA'
 copyright = '2022, Henrique'
 author = 'Henrique'
 

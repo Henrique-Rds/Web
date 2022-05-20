@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction &mdash; Documentation Documentation 1.0</title>
+  <title>Introduction &mdash; Documentation Documentation développeur ICA 1.0</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,9 @@
         <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="App" href="app.html" />
+    <link rel="prev" title="Site ICA" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -25,7 +27,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Documentation
+            <a href="index.html" class="icon icon-home"> Documentation développeur ICA
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -35,7 +37,15 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Le dossier App</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#le-dossier-public">Le dossier Public</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-dossier-intranet">Le dossier Intranet</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Le dossier App</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="app.html">App</a></li>
 </ul>
@@ -47,7 +57,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Intranet</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
 </ul>
 
@@ -57,7 +73,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Documentation</a>
+          <a href="index.html">Documentation développeur ICA</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -77,12 +93,39 @@
              
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre"></a></h1>
+<p>Cette documentation à pour but d’aider un développeur ne connaissant pas l’environnement de travail
+de l’Institut Clément Ader à pouvoir trouver des repères dans le code.</p>
+<p>Vous pouvez voir ci-dessous l’arborescence du site :</p>
+<p>Le site est divisé en plusieurs partie pour facilité la lisibilité.
+Premièrement les pages se situent dans le dossier App.
+Celui-ci contient les dossiers Public et Intranet que nous verrons plus tard.
+De plus des fichiers se trouvent dans ce même dossier, ce sont des fichiers « globaux » qui seront utilisés
+dans la plus part des pages.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Certaines pages utilisées dans l’intranet peuvent aussi être utilisées dans la partie public. Il est donc important
+de vérifier que les modifications ne cassent pas les deux pages.</p>
+</div>
+<div class="section" id="le-dossier-public">
+<h2>Le dossier Public<a class="headerlink" href="#le-dossier-public" title="Lien permanent vers ce titre"></a></h2>
+<p>Le dossier public regroupe toutes les applications et fichiers de la partie publique du site. Ces pages
+ne nécéssitent pas une connexion au site ICA et sont disponibles pour tous.</p>
+</div>
+<div class="section" id="le-dossier-intranet">
+<h2>Le dossier Intranet<a class="headerlink" href="#le-dossier-intranet" title="Lien permanent vers ce titre"></a></h2>
+<p>Le dossier Intranet regroupe toutes les applications et fichiers faisant partie de l’Intranet du site. Ces pages
+nécéssitent une connexion pour y accéder et permettent la gestion des pages ouverte au public. Par exemple : La partie
+gestion des theses de l’Intranet permet de gerer les theses vues par le public sur le site ICA.</p>
+</div>
 </div>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Site ICA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="app.html" class="btn btn-neutral float-right" title="App" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
