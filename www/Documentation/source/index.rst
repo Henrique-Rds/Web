@@ -7,12 +7,26 @@ L'utilité et le fonctionnement du site seront aussi expliqués.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-   
+   :caption: Introduction:
    introduction
-   ZRR
-   RegistreHygiene
 
+   :caption: Le dossier App
+   App
+
+   :caption: Public
+   Annuaire
+   Publications
+   Theses
+
+   :caption: Intranet
+   Equipement
+   Formulaire
+   Offre
+   RegistreHygiene
+   Reservation
+   Stats
+   Theses
+   ZRR
 
 Test du tableau
 ===============
