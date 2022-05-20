@@ -10,23 +10,29 @@ L'utilité et le fonctionnement du site seront aussi expliqués.
    :caption: Introduction:
    introduction
 
+.. toctree::
+   :maxdepth: 2
    :caption: Le dossier App
-   App
+   app
 
+.. toctree::
+   :maxdepth: 2
    :caption: Public
-   Annuaire
-   Publications
-   Theses
+   annuaire
+   publications
+   theses
 
+.. toctree::
+   :maxdepth: 2
    :caption: Intranet
-   Equipement
-   Formulaire
-   Offre
-   RegistreHygiene
-   Reservation
-   Stats
-   Theses
-   ZRR
+   equipement
+   formulaire
+   offre
+   registrehygiene
+   reservation
+   stats
+   theses
+   zrr
 
 Test du tableau
 ===============
