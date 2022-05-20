@@ -5,8 +5,7 @@ Introduction
 Cette documentation à pour but d'aider un développeur ne connaissant pas l'environnement de travail 
 de l'Institut Clément Ader à pouvoir trouver des repères dans le code.
 
-Vous trouverez ici l'aborescance du site : `Arborescence des fichiers`_ (https://www.gloomaps.com/nVPbNqnqAl)
-.. _Arborescence des fichiers: https://www.gloomaps.com/nVPbNqnqAl
+Vous trouverez ici l'aborescence du site : `Arborescence des fichiers <https://www.gloomaps.com/nVPbNqnqAl>`__
 
 
 Le site est divisé en plusieurs partie pour facilité la lisibilité.
