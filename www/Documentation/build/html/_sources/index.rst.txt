@@ -26,7 +26,13 @@ Site ICA
    :maxdepth: 2
    :caption: Intranet
 
+   equipement
+   formulaire
+   offre
    registrehygiene
+   reservation
+   stats
+   gestiontheses
    zrr
 
 * :ref:`genindex`
