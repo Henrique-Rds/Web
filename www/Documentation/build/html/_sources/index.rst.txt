@@ -21,6 +21,7 @@ Site ICA
    annuaire
    publications
    theses
+   fichiersPublic
 
 .. toctree::
    :maxdepth: 2
@@ -34,6 +35,7 @@ Site ICA
    stats
    gestiontheses
    zrr
+   fichiersIntranet
 
 * :ref:`genindex`
 * :ref:`modindex`
