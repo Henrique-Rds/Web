@@ -36,7 +36,7 @@ La deuxième partie contient toutes les requêtes SQL du site ICA.
 La plus part de ces requêtes sont commentées pour une compréhension plus simple.
 La méthode utilisée pour faire ces requêtes est très simple, elle utilise une base répétitive.
 
-.. code-block:: PHP
+.. code-block::
         public function getTheses($id){
         $req = $this->bdd->prepare('SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?');
         $req->execute(array($id));
