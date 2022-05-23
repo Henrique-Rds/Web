@@ -46,7 +46,7 @@ La méthode utilisée pour faire ces requêtes est très simple, elle utilise un
         }
 
 Dans l'exemple ci-dessus on peut voir que nous préparons la requete en faisant : 
-    *$req = $this->bdd->prepare*(**REQUETE**)
+    *$req = $this->bdd->prepare* (**REQUETE**)
 
 Enfin on execute la requete, avec le array les '?' dans la requete seront remplacés par le paramètre de notre fonction.
 Si nous avons plusieurs paramètres ils seront remplacés dans l'ordre du array.
