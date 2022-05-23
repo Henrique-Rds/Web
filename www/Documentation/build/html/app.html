@@ -135,10 +135,10 @@ Les variables <strong>DB_SERVEUR</strong>, <strong>DB_NAME</strong>, <strong>DB_
 La plus part de ces requêtes sont commentées pour une compréhension plus simple.
 La méthode utilisée pour faire ces requêtes est très simple, elle utilise une base répétitive.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Code
-public function getTheses($id){
+<div class="code-block-caption"><span class="caption-text">EXT:www/codes snippet/GestionBdd.php
+public function getTheses(&lt;parametre&gt;){
     $req = $this-&gt;bdd-&gt;prepare(“SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?”);
-    $req-&gt;execute(array($id));
+    $req-&gt;execute(array(&lt;parametre&gt;));
     return $req;
 }</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code"></a></div>
 <div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span>
@@ -146,11 +146,12 @@ public function getTheses($id){
 </div>
 </div>
 <dl class="simple">
-<dt>Dans l’exemple ci-dessus on peut voir que nous préparons la requete en faisant :</dt><dd><p><em>$req = $this-&gt;bdd-&gt;prepare*(**REQUETE*</em>)</p>
+<dt>Dans l’exemple ci-dessus on peut voir que nous préparons la requete en faisant :</dt><dd><p>$req = $this-&gt;bdd-&gt;prepare(<strong>REQUETE</strong>)</p>
 </dd>
 </dl>
 <p>Enfin on execute la requete, avec le array les “?” dans la requete seront remplacés par le paramètre de notre fonction.
-Si nous avons plusieurs paramètres ils seront remplacés dans l’ordre du array.</p>
+Si nous avons plusieurs paramètres ils seront remplacés dans l’ordre du array.
+Selon l’utilisation il est intéréssant ou pas de return le resultat.</p>
 </div>
 </div>
 <div class="section" id="le-fichier-lang-en">
