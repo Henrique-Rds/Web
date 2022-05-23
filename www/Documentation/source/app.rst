@@ -25,11 +25,6 @@ Le fichier GestionBdd
 
 Le fichier GestionBDD est divisé en deux grandes parties.
 
-.. code-block::
-   :caption: A cool example
-
-       The output of this line starts with four spaces.
-
 La connexion GestionBdd
 -----------------------
 La première n'est autre que la connexion à la base de donnée grâce à la fonction : fonction __construct()
@@ -43,6 +38,7 @@ La méthode utilisée pour faire ces requêtes est très simple, elle utilise un
 
 .. code-block:: PHP
     :caption: Exemple de code
+
         public function getTheses(<parametre>){
             $req = $this->bdd->prepare('SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?');
             $req->execute(array(<parametre>));
