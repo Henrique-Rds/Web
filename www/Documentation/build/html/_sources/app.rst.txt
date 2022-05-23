@@ -37,14 +37,16 @@ La plus part de ces requêtes sont commentées pour une compréhension plus simp
 La méthode utilisée pour faire ces requêtes est très simple, elle utilise une base répétitive.
 
 .. code-block::
+    :caption: Code 
         public function getTheses($id){
-        $req = $this->bdd->prepare('SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?');
-        $req->execute(array($id));
-        return $req;
+            $req = $this->bdd->prepare('SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?');
+            $req->execute(array($id));
+            return $req;
         }
 
 Dans l'exemple ci-dessus on peut voir que nous préparons la requete en faisant : 
     *$req = $this->bdd->prepare*(**REQUETE**)
+
 Enfin on execute la requete, avec le array les '?' dans la requete seront remplacés par le paramètre de notre fonction.
 Si nous avons plusieurs paramètres ils seront remplacés dans l'ordre du array.
 
