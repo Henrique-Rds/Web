@@ -11,7 +11,7 @@ On peut retrouver la traduction de la page avec le code faisant appel au pages l
 Les variables exemple : **TXT_NOM_ANNUAIRE** permettent la traduction automatique des entete tu tableau.
 
 Le tableau représentant l'annuaire est trié par nom de famille :
-$users = get_users("orderby=user_lastname");
+    *$users = get_users("orderby=user_lastname");*
 
 **statusToString** est une fonction que l'on retrouve dans la page annuaire_fonctions que nous définirons après.
 
@@ -22,4 +22,4 @@ Enfin on effectue une vérification des groupes des utilisateurs pour echo *AXTR
 Les fonctions d'Annuaire
 ========================
 
-Ce fichier ne contient qu'une seule fonction, elle utilise un switch case pour vérifier le status de l'utilisateur.
+Ce fichier ne contient qu'une seule fonction, elle utilise un switch case pour vérifier le status de l'utilisateur. 
