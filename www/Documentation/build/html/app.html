@@ -46,7 +46,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">App</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#les-dossier-public-et-intranet">Les dossier Public et Intranet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-fichier-database">Le fichier database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#le-fichier-gestionbdd">Le fichier GestionBdd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-fichier-gestionbdd">Le fichier GestionBdd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#la-connexion-gestionbdd">La connexion GestionBdd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-requetes-sql">Les requêtes SQL</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#le-fichier-lang-en">Le fichier lang-en</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-fichier-lang-fr">Le fichier lang-fr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-fichier-redirect-admin-user">Le fichier redirect-admin-user</a></li>
@@ -109,10 +113,42 @@ sont pour la plus part réutilisés dans la majorité des pages du site.</p>
 <div class="section" id="le-fichier-database">
 <h2>Le fichier database<a class="headerlink" href="#le-fichier-database" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier à une utilité très simple, il permet la connexion avec la base de donnée.
-On peut y retrouver les identifiants</p>
+On peut y retrouver l’id du serveur auquel on souhaite se connecter, le nom du serveur, le pseudo de connexion
+ainsi que le mot de passe pour se connecter.
+Ces identifiants de connexion sont définis dans des variables réutilisables.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ce fichier est utilisé dans le fichier <em>GestionBdd</em> que nous verrons ci-dessous.</p>
+</div>
 </div>
 <div class="section" id="le-fichier-gestionbdd">
 <h2>Le fichier GestionBdd<a class="headerlink" href="#le-fichier-gestionbdd" title="Lien permanent vers ce titre"></a></h2>
+<p>Le fichier GestionBDD est divisé en deux grandes parties.</p>
+<div class="section" id="la-connexion-gestionbdd">
+<h3>La connexion GestionBdd<a class="headerlink" href="#la-connexion-gestionbdd" title="Lien permanent vers ce titre"></a></h3>
+<p>La première n’est autre que la connexion à la base de donnée grâce à la fonction : fonction __construct()
+Les variables <strong>DB_SERVEUR</strong>, <strong>DB_NAME</strong>, <strong>DB_USERNAME</strong> et <strong>DB_PASSWORD</strong> sont définis dans le fichier <em>database</em></p>
+</div>
+<div class="section" id="les-requetes-sql">
+<h3>Les requêtes SQL<a class="headerlink" href="#les-requetes-sql" title="Lien permanent vers ce titre"></a></h3>
+<p>La deuxième partie contient toutes les requêtes SQL du site ICA.
+La plus part de ces requêtes sont commentées pour une compréhension plus simple.
+La méthode utilisée pour faire ces requêtes est très simple, elle utilise une base répétitive.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Un exemple
+public function getTheses($id){
+$req = $this-&gt;bdd-&gt;prepare(“SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?”);
+$req-&gt;execute(array($id));
+return $req;
+}</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>Dans l’exemple ci-dessus on peut voir que nous préparons la requete en faisant : <em>$req = $this-&gt;bdd-&gt;prepare*(**REQUETE*</em>)
+Enfin on execute la requete, avec le array les “?” dans la requete seront remplacés par le paramètre de notre fonction.
+Si nous avons plusieurs paramètres ils seront remplacés dans l’ordre du array.</p>
+</div>
 </div>
 <div class="section" id="le-fichier-lang-en">
 <h2>Le fichier lang-en<a class="headerlink" href="#le-fichier-lang-en" title="Lien permanent vers ce titre"></a></h2>
