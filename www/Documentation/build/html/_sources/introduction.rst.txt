@@ -8,7 +8,7 @@ de l'Institut Clément Ader à pouvoir trouver des repères dans le code.
 Vous trouverez ici l'aborescence du site : `Arborescence des fichiers <https://www.gloomaps.com/nVPbNqnqAl>`__
 
 
-Le site est divisé en plusieurs partie pour facilité la lisibilité.
+Le site est divisé en plusieurs partie pour faciliter la lisibilité.
 Premièrement les pages se situent dans le dossier App.
 Celui-ci contient les dossiers Public et Intranet que nous verrons plus tard.
 De plus des fichiers se trouvent dans ce même dossier, ce sont des fichiers "globaux" qui seront utilisés 
