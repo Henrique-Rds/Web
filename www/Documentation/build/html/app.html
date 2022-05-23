@@ -159,6 +159,19 @@ Selon l’utilisation il est intéréssant ou pas de return le resultat.</p>
 Nous allons définir un mot en anglais à une variable qui sera identique à celle du fichier lang-fr.
 Cela nous permettra d’alterner entre la version anglaise contenue dans cette page et la version française
 contenue dans la page <em>lang-fr</em></p>
+<p>Le code ci-dessous se retrouvera en tête de page pour permettre de changer de langue de la page en un clic.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Code de traduction</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code"></a></div>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">    if(strpos($currentlang,&#39;fr&#39;)!==false){</span>
+<span class="x">        include(&#39;App/lang-fr.php&#39;);</span>
+<span class="x">    }elseif(strpos($currentlang,&#39;en&#39;)!==false){</span>
+<span class="x">        include(&#39;App/lang-en.php&#39;);</span>
+<span class="x">    }else{</span>
+<span class="x">        echo(&quot;échec de reconnaissance de la langue&quot;);</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="le-fichier-lang-fr">
 <h2>Le fichier lang-fr<a class="headerlink" href="#le-fichier-lang-fr" title="Lien permanent vers ce titre"></a></h2>
@@ -166,6 +179,19 @@ contenue dans la page <em>lang-fr</em></p>
 Nous allons définir un mot en français à une variable qui sera identique à celle du fichier lang-en.
 Cela nous permettra d’alterner entre la version française contenue dans cette page et la version anglaise
 contenue dans la page <em>lang-en</em></p>
+<p>Le code ci-dessous se retrouvera en tête de page pour permettre de changer de langue de la page en un clic.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Code de traduction</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code"></a></div>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">    if(strpos($currentlang,&#39;fr&#39;)!==false){</span>
+<span class="x">        include(&#39;App/lang-fr.php&#39;);</span>
+<span class="x">    }elseif(strpos($currentlang,&#39;en&#39;)!==false){</span>
+<span class="x">        include(&#39;App/lang-en.php&#39;);</span>
+<span class="x">    }else{</span>
+<span class="x">        echo(&quot;échec de reconnaissance de la langue&quot;);</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="le-fichier-redirect-admin-user">
 <h2>Le fichier redirect-admin-user<a class="headerlink" href="#le-fichier-redirect-admin-user" title="Lien permanent vers ce titre"></a></h2>

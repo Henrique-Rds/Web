@@ -60,6 +60,19 @@ Nous allons définir un mot en anglais à une variable qui sera identique à cel
 Cela nous permettra d'alterner entre la version anglaise contenue dans cette page et la version française
 contenue dans la page *lang-fr*
 
+Le code ci-dessous se retrouvera en tête de page pour permettre de changer de langue de la page en un clic.
+
+.. code-block:: PHP
+    :caption: Code de traduction
+
+        if(strpos($currentlang,'fr')!==false){
+            include('App/lang-fr.php');
+        }elseif(strpos($currentlang,'en')!==false){
+            include('App/lang-en.php');
+        }else{
+            echo("échec de reconnaissance de la langue");
+        }   
+
 Le fichier lang-fr
 ==================
 
@@ -67,6 +80,19 @@ Comme le fichier précedant,ce fichier permet la traduction automatique du site.
 Nous allons définir un mot en français à une variable qui sera identique à celle du fichier lang-en.
 Cela nous permettra d'alterner entre la version française contenue dans cette page et la version anglaise
 contenue dans la page *lang-en*
+
+Le code ci-dessous se retrouvera en tête de page pour permettre de changer de langue de la page en un clic.
+
+.. code-block:: PHP
+    :caption: Code de traduction
+
+        if(strpos($currentlang,'fr')!==false){
+            include('App/lang-fr.php');
+        }elseif(strpos($currentlang,'en')!==false){
+            include('App/lang-en.php');
+        }else{
+            echo("échec de reconnaissance de la langue");
+        }   
 
 Le fichier redirect-admin-user
 ==============================
