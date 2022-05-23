@@ -53,9 +53,29 @@ Selon l'utilisation il est intéréssant ou pas de return le resultat.
 
 Le fichier lang-en
 ==================
+
+Ce fichier permet la traduction automatique du site.
+Nous allons définir un mot en anglais à une variable qui sera identique à celle du fichier lang-fr.
+Cela nous permettra d'alterner entre la version anglaise contenue dans cette page et la version française
+contenue dans la page *lang-fr*
+
 Le fichier lang-fr
 ==================
+
+Comme le fichier précedant,ce fichier permet la traduction automatique du site.
+Nous allons définir un mot en français à une variable qui sera identique à celle du fichier lang-en.
+Cela nous permettra d'alterner entre la version française contenue dans cette page et la version anglaise
+contenue dans la page *lang-en*
+
 Le fichier redirect-admin-user
 ==============================
+
+
+Ce fichier permet simplement de rediriger un utilisateur qui n'est pas connecté vers la page de connexion.
+De plus les utilisateurs n'ayant pas les permissions d'administrateur sur le site ICA d'être redirigé vers la page d'accueil.
+
 Le fichier redirect-user
 ========================
+
+Ce fichier permet simplement de rediriger un utilisateur qui n'est pas connecté vers la page de connexion.
+
