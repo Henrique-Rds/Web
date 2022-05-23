@@ -97,9 +97,18 @@
 <h1>Annuaire<a class="headerlink" href="#annuaire" title="Lien permanent vers ce titre"></a></h1>
 <div class="section" id="le-fichier-annuaire">
 <h2>Le fichier Annuaire<a class="headerlink" href="#le-fichier-annuaire" title="Lien permanent vers ce titre"></a></h2>
+<p>Le fichier Annuaire fais appel à <em>annuaire_fonction.php</em> que nous verrons après.</p>
+<p>On peut retrouver la traduction de la page avec le code faisant appel au pages lang-en et lang-fr.
+Les variables exemple : <strong>TXT_NOM_ANNUAIRE</strong> permettent la traduction automatique des entete tu tableau.</p>
+<p>Le tableau représentant l’annuaire est trié par nom de famille :
+$users = get_users(« orderby=user_lastname »);</p>
+<p><strong>statusToString</strong> est une fonction que l’on retrouve dans la page annuaire_fonctions que nous définirons après.</p>
+<p>On vérifie si le statut de l’utilisateur n’est pas professeur et on va echo <em>HDR</em> devant son status si c’est le cas.
+Enfin on effectue une vérification des groupes des utilisateurs pour echo <em>AXTR</em> et on echo l’établissement de rattachement de l’utilisateur.</p>
 </div>
 <div class="section" id="les-fonctions-d-annuaire">
 <h2>Les fonctions d’Annuaire<a class="headerlink" href="#les-fonctions-d-annuaire" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier ne contient qu’une seule fonction, elle utilise un switch case pour vérifier le status de l’utilisateur.</p>
 </div>
 </div>
 
