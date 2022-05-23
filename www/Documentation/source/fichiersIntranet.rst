@@ -1,3 +1,3 @@
 =================
-Ficheirs Intranet
+Fichiers Intranet
 =================

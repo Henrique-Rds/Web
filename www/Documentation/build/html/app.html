@@ -75,7 +75,6 @@
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Ficheirs Intranet</a></li>
 </ul>
 
         </div>
@@ -134,17 +133,6 @@ Les variables <strong>DB_SERVEUR</strong>, <strong>DB_NAME</strong>, <strong>DB_
 <p>La deuxième partie contient toutes les requêtes SQL du site ICA.
 La plus part de ces requêtes sont commentées pour une compréhension plus simple.
 La méthode utilisée pour faire ces requêtes est très simple, elle utilise une base répétitive.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Un exemple
-public function getTheses($id){
-$req = $this-&gt;bdd-&gt;prepare(“SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?”);
-$req-&gt;execute(array($id));
-return $req;
-}</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code"></a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 <dl class="simple">
 <dt>Dans l’exemple ci-dessus on peut voir que nous préparons la requete en faisant :</dt><dd><p><em>$req = $this-&gt;bdd-&gt;prepare*(**REQUETE*</em>)</p>
 </dd>
