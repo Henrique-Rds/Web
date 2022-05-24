@@ -50,7 +50,15 @@
 <li class="toctree-l1"><a class="reference internal" href="annuaire.html">Annuaire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theses.html">Theses</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fichiers Public</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fichiers Public</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#le-nombre-d-equipement-et-d-offres">Le nombre d’equipement et d’offres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nombre-d-equipements">Nombre d’équipements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nombre-d-offres">Nombre d’offres</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#les-listes">Les listes</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Intranet</span></p>
 <ul>
@@ -59,10 +67,10 @@
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Ficheirs Intranet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
 </ul>
 
         </div>
@@ -91,6 +99,43 @@
              
   <div class="section" id="fichiers-public">
 <h1>Fichiers Public<a class="headerlink" href="#fichiers-public" title="Lien permanent vers ce titre"></a></h1>
+<p>Dans le dossier public nous trouvons deux fichiers : <em>liste-equipements.php</em> ainsi que <em>liste-offres-emploi.php</em> .
+Sachant que la méthode utilisée pour les deux est la même nous allons regrouper les explications en deux parties.</p>
+<div class="section" id="le-nombre-d-equipement-et-d-offres">
+<h2>Le nombre d’equipement et d’offres<a class="headerlink" href="#le-nombre-d-equipement-et-d-offres" title="Lien permanent vers ce titre"></a></h2>
+<div class="section" id="nombre-d-equipements">
+<h3>Nombre d’équipements<a class="headerlink" href="#nombre-d-equipements" title="Lien permanent vers ce titre"></a></h3>
+<p>Pour calculer le nombre d’équipements on fait appel à la fonction <strong>nombreEquipement</strong>
+Ensuite on retrouve l’affichage selon le nombre d’équipements.</p>
+</div>
+<div class="section" id="nombre-d-offres">
+<h3>Nombre d’offres<a class="headerlink" href="#nombre-d-offres" title="Lien permanent vers ce titre"></a></h3>
+<p>Pour calculer le nombre d’offres on fait appel à la fonction <strong>nombreOffresDispo</strong>
+Ensuite on retrouve l’affichage selon le nombre d’équipements.</p>
+</div>
+</div>
+<div class="section" id="les-listes">
+<h2>Les listes<a class="headerlink" href="#les-listes" title="Lien permanent vers ce titre"></a></h2>
+<p>Pour expliquer le fonctionnement des listes nous allons prendre pour exemple la partie Contrat CDD du fichier <em>liste-offres-emploi</em> :</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Exemple de code</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code"></a></div>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">    $type_offre =&quot;Contrat CDD&quot;;</span>
+<span class="x">    $res = $bdd-&gt;analyseListeOffresDispo($type_offre);</span>
+<span class="x">    if ($res[0][0] &gt; 0)</span>
+<span class="x">            ?&gt;</span>
+<span class="x">            &lt;p style=&#39;font-size: 1.33em; padding-left: 45px; color: #ba2133;&#39;&gt;&lt;strong&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nx">TXT_CDD_EMPLOI</span><span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span>
+            <span class="k">echo</span> <span class="nx">do_shortcode</span><span class="p">(</span><span class="s1">&#39;[pods name=&quot;offre_emploi&quot; where=&quot;type_offre=\&#39;Contrat CDD\&#39; AND date_fin &gt;= \&#39;&#39;</span><span class="o">.</span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;\&#39;&quot; template=&quot;Liste des offres&quot; limit=&quot;1000&quot;]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Nous allons décomposer le code ci-dessus pour mieux comprendre son fonctionnement.
+Premièrement on va définir notre parametre avec la variable <strong>$type_offre</strong> .
+Ensuite on va faire appel à la requete <strong>analyseListeOffresDispo</strong> se trouvant dans le fichier <em>GestionBdd.php</em> .
+Cette requete nécéssite un parametre qui est ici défini avec <strong>$type_offre</strong>.
+Enfin la derniere partie de ce code va utiliser une balise <strong>&lt;p&gt;</strong> pour afficher le titre de la partie.
+La dernière ligne du code fait appel au pod que nous retrouverons sur WordPress.</p>
+</div>
 </div>
 
 
