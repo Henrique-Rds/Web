@@ -5,6 +5,10 @@ Fichiers Public
 Dans le dossier public nous trouvons deux fichiers : *liste-equipements.php* ainsi que *liste-offres-emploi.php* .
 Sachant que la méthode utilisée pour les deux est la même nous allons regrouper les explications en deux parties.
 
+.. note::
+    Ces deux fichiers sont les seuls de leurs pages dans le dossier Public, nous n'avons donc pas créer de dossier dédié
+    pour éviter les dossier avec un unique fichier.
+
 Le nombre d'equipement et d'offres
 ==================================
 
