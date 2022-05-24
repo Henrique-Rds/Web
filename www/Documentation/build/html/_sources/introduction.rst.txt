@@ -50,7 +50,7 @@ Les pages
 ---------
 
 Pour la gestion des pages nous pouvons soit cliquer sur le bouton **Modifier la page** représenté sur la page ci-dessous.
-.. image:: images/ModifierWP.png
+.. image:: ModifierWP.png
 
 Tout comme pour les snippet on peut aussi retrouver les pages dans la liste du menu WordPress avec la catégorie **Pages**
 
