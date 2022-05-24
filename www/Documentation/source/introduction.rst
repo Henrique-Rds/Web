@@ -43,6 +43,7 @@ Les snippet
 -----------
 
 Pour gérer les snippet appelés dans les pages wordPress il suffit d'aller dans la catégorie **XYZ PHP Code** dans la liste du menu WordPress.
+
 Voici un lien pour aller directement sur la page des snippet : `Snippet WordPress <https://ica.cnrs.fr/wp-admin/admin.php?page=insert-php-code-snippet-manage>`__
 
 Les pages
@@ -52,4 +53,5 @@ Pour la gestion des pages nous pouvons soit cliquer sur le bouton **Modifier la 
 .. image:: images/ModifierWP.png
 
 Tout comme pour les snippet on peut aussi retrouver les pages dans la liste du menu WordPress avec la catégorie **Pages**
+
 Voici un lien pour aller directement sur la liste des pages. `Pages WordPress <https://ica.cnrs.fr/wp-admin/edit.php?post_type=page>`__
