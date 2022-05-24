@@ -59,11 +59,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#page-equipements">Page Equipements</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#supprimer-un-moyen">Supprimer un moyen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-nombre-d-equipement-et-d-offres">Le nombre d’equipement et d’offres</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#nombre-d-equipements">Nombre d’équipements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nombre-d-offres">Nombre d’offres</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#les-listes">Les listes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
@@ -112,6 +114,12 @@ La description sera donc la même</p>
 De plus on peut voir un widget <strong>Pod</strong> faisant appel à moyen.</p>
 </div>
 </div>
+<div class="section" id="supprimer-un-moyen">
+<h2>Supprimer un moyen<a class="headerlink" href="#supprimer-un-moyen" title="Lien permanent vers ce titre"></a></h2>
+<p>Pour supprimer un moyen on vérifie qu’un id à été transmis avec le <em>$_GET</em>.
+Ensuite on fais appel à la requête <strong>suprimerMoyen</strong> prenant pour parametre le <em>$id</em> récupéré avec le get.</p>
+<p>Pour la suite de la suppression on utilise un <em>$_GET</em> pour récupérer l’url et on supprime le fichier associer si il existe.</p>
+</div>
 <div class="section" id="le-nombre-d-equipement-et-d-offres">
 <h2>Le nombre d’equipement et d’offres<a class="headerlink" href="#le-nombre-d-equipement-et-d-offres" title="Lien permanent vers ce titre"></a></h2>
 <div class="section" id="nombre-d-equipements">
@@ -125,6 +133,28 @@ Ensuite on retrouve l’affichage selon le nombre d’équipements.</p>
 Ensuite on retrouve l’affichage selon le nombre d’équipements.
 Le template appelé est : <em>Tableau des moyens (gestion)</em></p>
 </div>
+</div>
+<div class="section" id="les-listes">
+<h2>Les listes<a class="headerlink" href="#les-listes" title="Lien permanent vers ce titre"></a></h2>
+<p>Pour expliquer le fonctionnement des listes nous allons prendre pour exemple la partie Contrat CDD du fichier <em>liste-offres-emploi</em> :</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Exemple de code</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code"></a></div>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">    $categorie =&quot;Analyse physico-chimique&quot;;</span>
+<span class="x">    $res = $bdd-&gt;analyseListeEquipement($categorie);</span>
+<span class="x">    if ($res[0][0] &gt; 0)</span>
+<span class="x">            ?&gt;</span>
+<span class="x">            &lt;br&gt;&lt;p style=&#39;font-size: 1.33em; padding-left: 45px; color: #ba2133;&#39;&gt;&lt;strong&gt;Equipement Analyse physico-chimique&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span>
+            <span class="k">echo</span> <span class="nx">do_shortcode</span><span class="p">(</span><span class="s1">&#39;[pods name=&quot;moyen&quot; where=&quot;categorie=\&#39;Analyse physico-chimique\&#39;&quot; template=&quot;Tableau des moyens (gestion)&quot; limit=&quot;1000&quot;]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Nous allons décomposer le code ci-dessus pour mieux comprendre son fonctionnement.
+Premièrement on va définir notre parametre avec la variable <strong>$categorie</strong> .
+Ensuite on va faire appel à la requete <strong>analyseListeEquipement</strong> se trouvant dans le fichier <em>GestionBdd.php</em> .
+Cette requete nécéssite un parametre qui est ici défini avec <strong>$categorie</strong>.
+Enfin la derniere partie de ce code va utiliser une balise <strong>&lt;p&gt;</strong> pour afficher le titre de la partie.
+La dernière ligne du code fait appel au pod que nous retrouverons sur WordPress.</p>
 </div>
 </div>
 
