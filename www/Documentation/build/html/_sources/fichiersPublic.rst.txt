@@ -9,6 +9,17 @@ Sachant que la méthode utilisée pour les deux est la même nous allons regroup
     Ces deux fichiers sont les seuls de leurs pages dans le dossier Public, nous n'avons donc pas créer de dossier dédié
     pour éviter les dossier avec un unique fichier.
 
+
+Composition de la page
+======================
+
+Page Equipements
+----------------
+
+Si nous observons les widget qui composent cette page nous pouvons observer qu'il y a un widget **MetaSlider** qui permet d'afficher un diaporama sur la page.
+Parmis ces widget nous pouvons retrouver un **Insert Snippet** faisant appel à la page décrite plus bas dans la documentation.
+De plus on peut aussi trouver un bouton menant à la page de réservation des équipements ainsi qu'un widget **SiteOrigin Editeur** ajoutant un titre.
+
 Le nombre d'equipement et d'offres
 ==================================
 
