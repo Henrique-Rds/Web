@@ -55,3 +55,11 @@ Pour la gestion des pages nous pouvons soit cliquer sur le bouton **Modifier la 
 Tout comme pour les snippet on peut aussi retrouver les pages dans la liste du menu WordPress avec la catégorie **Pages**
 
 Voici un lien pour aller directement sur la liste des pages. `Pages WordPress <https://ica.cnrs.fr/wp-admin/edit.php?post_type=page>`__
+
+Les pods
+--------
+
+Pour les pods utilisés dans le code on peut aussi les retrouver la liste du menu WordPress avec la catégorie **Administration**
+
+Les tableaux WordPress
+----------------------
