@@ -23,3 +23,6 @@ Les fonctions d'Annuaire
 ========================
 
 Ce fichier ne contient qu'une seule fonction, elle utilise un switch case pour vérifier le status de l'utilisateur. 
+
+.. note::
+    Ce fichier est utilisé dans le fichier *annuaire.php* que nous avons vu ci-dessus.
