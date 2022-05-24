@@ -60,7 +60,15 @@ Voici un lien pour aller directement sur la liste des pages. `Pages WordPress <h
 Les pods
 --------
 
-Pour les pods utilisés dans le code on peut aussi les retrouver la liste du menu WordPress avec la catégorie **Administration**
+Pour les pods utilisés dans le code on peut aussi les retrouver la liste du menu WordPress avec la catégorie **Administration** et ensuite sélectionner **Pods Page**
+
+Voici un lien pour aller directement sur la liste des pods page. `Pods Page WordPress <https://ica.cnrs.fr/wp-admin/admin.php?page=pods>`__
 
 Les tableaux WordPress
 ----------------------
+
+Il est possible de trouver de nombreux tableaux sur le site ICA cependant ils ne sont pas tous codés de la même façon.
+Pour certains nous faisons appel à des pod spéciaux car ils sont liés à des tableaux WordPress.
+Pour les retrouvrer il faut se diriger vers la liste du menu WordPress avec la catégorie **Administration** et ensuite sélectionner **Pods Templates**
+
+Voici un lien pour aller directement sur la liste des pods template permettant l'utilisation des tableaux. `Pods Template WordPress <https://ica.cnrs.fr/wp-admin/edit.php?post_type=_pods_template>`__
