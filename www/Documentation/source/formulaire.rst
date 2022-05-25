@@ -12,8 +12,10 @@ dans le dossier formulaire de l'intranet.
 Inscription formulaire
 ======================
 
-Le fichier formulaire-inscription n'étant pas dans le dossier App nous avons mis une copie identique dans celui-ci même si elle n'est pas utilisée.
-Cela permet de retrouver et comprendre rapidement le fonctionnement de la page.
+.. important::
+    
+    Le fichier formulaire-inscription n'étant pas dans le dossier App nous avons mis une copie identique dans celui-ci même si elle n'est pas utilisée.
+    Cela permet de retrouver et comprendre rapidement le fonctionnement de la page.
 
 Sur le gestionnaire WordPress de cette page on trouvera un bouton permettant de se diriger vers la page de modification d'un utilisateur.
 On peut ensuite trouver un widget **SiteOrigin Editeur** qui fait appel au snippet *formulaire-inscription*.
