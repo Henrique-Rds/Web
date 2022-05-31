@@ -15,7 +15,7 @@ Il faudra ensuite différents logiciels que je vais vous présenter ci-dessous.
     Il n'y a pas d'ordre pour l'installation des logiciels. L'ordre pour le lancement sera donné dans les explications.
 
 FileZilla
----------
+=========
 
 FileZilla Client est un client FTP, FTPS et SFTP, développé sous la licence publique générale GNU.
 Avec ce logiciel vous pourrez gérer les fichiers du site ICA. Pour commencer vous pouvez télécharger FileZilla
@@ -38,7 +38,7 @@ Pour vous connecter vous pouvez ajouter avec le bouton **Nouveau site** voici le
 de connexion pour les deux sites.
 
 ICA Prod :
-__________
+----------
 
 - Protocole : SFTP
 - Hôte : 195.220.198.90
@@ -47,7 +47,7 @@ __________
 - Mot de Passe : 53vw4KZxq4HF
 
 ICA Préprod :
-_____________
+-------------
 
 - Protocole : SFTP
 - Hôte : 195.220.198.90
@@ -65,3 +65,12 @@ Pour acceder aux dossiers il faut choisir **ica.cnrs.fr** ensuite **www** et enf
 du site ICA .
 
 .. image:: images/FichiersFTP.png
+
+
+FortiClient VPN
+===============
+
+Pour l'installation du VPN de l'INSA vous avez un tutoriel sur le lien ci-contre : `Installation VPN <https://wiki.etud.insa-toulouse.fr/books/r%C3%A9seau-et-internet/page/sous-windows>`__
+
+PhpMyAdmin
+==========
