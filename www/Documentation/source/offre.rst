@@ -4,6 +4,7 @@ Offres
 
 Cette page utilise les fichier (snippet) *redirect-user* et *liste-gestion-offre-emploi* qui reprends le code du fichier liste-offres-emploi
 et un **pod template** offre emploie.
+La page fait appel aussi à *supprimer-offre*.
 
 Nombre d'offres
 ===============
@@ -35,3 +36,10 @@ Cette requete nécéssite un parametre qui est ici défini avec **$type_offre**.
 Enfin la derniere partie de ce code va utiliser une balise **<p>** pour afficher le titre de la partie.
 La dernière ligne du code fait appel au pod que nous retrouverons sur WordPress.
 
+Supprimer offre
+===============
+
+Pour supprimer une offre on vérifie qu'un id à été transmis avec le *$_GET*.
+Ensuite on fais appel à la requête **suprimerOffre** prenant pour parametre le *$id* récupéré avec le get.
+
+Pour la suite de la suppression on utilise un *$_GET* pour récupérer l'url et on supprime le fichier associer si il existe.
