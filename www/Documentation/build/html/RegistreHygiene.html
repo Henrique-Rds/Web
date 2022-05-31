@@ -18,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Réservations" href="reservation.html" />
-    <link rel="prev" title="Offres" href="offre.html" /> 
+    <link rel="next" title="Stats" href="stats.html" />
+    <link rel="prev" title="Réservations" href="reservation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -58,14 +58,17 @@
 <li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Registre Hygiene</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#titre-registrehygiene">Titre RegistreHygiene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documents-registre-hygiene">Documents registre Hygiene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulter-le-registre">Consulter le registre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ajouter-une-nouvelle-observation">Ajouter une nouvelle observation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consulter-les-nouvelles-observations">Consulter les nouvelles observations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
 </ul>
 
@@ -95,10 +98,27 @@
              
   <div class="section" id="registre-hygiene">
 <h1>Registre Hygiene<a class="headerlink" href="#registre-hygiene" title="Lien permanent vers ce titre"></a></h1>
-<div class="section" id="titre-registrehygiene">
-<h2>Titre RegistreHygiene<a class="headerlink" href="#titre-registrehygiene" title="Lien permanent vers ce titre"></a></h2>
-<p>Dans cette documentation les différentes applications seront expliquées et de nombreuses informations sur le code seront données.
-L’utilité et le fonctionnement du site seront aussi expliqués.</p>
+<div class="section" id="documents-registre-hygiene">
+<h2>Documents registre Hygiene<a class="headerlink" href="#documents-registre-hygiene" title="Lien permanent vers ce titre"></a></h2>
+<p>Cette page affiche uniquement un lien permettant de télécharger les documents.</p>
+</div>
+<div class="section" id="consulter-le-registre">
+<h2>Consulter le registre<a class="headerlink" href="#consulter-le-registre" title="Lien permanent vers ce titre"></a></h2>
+<p>Consulter le registre contient un snippet sur Wordpress <em>affichage-registre-rsst</em> .</p>
+<p>Il y a au sommet de la page un bouton permettant de télécharger le tableau en format Excel.</p>
+<p>Dans le code on peut voir la création du tableau contenant les colonnes :
+- <strong>Agent ou usager</strong>
+- <strong>Observations relatives à la prévention des risques professionels et à l’amélioration des conditions de travail</strong> ,
+- <strong>Date de saisie</strong>
+- <strong>Date de consultation (responsable de la structure)</strong></p>
+<p>Dans le reste du code les variables <em>username</em> <em>dateSaisie</em> et <em>dateConsultationChefStructure</em> sont mises en
+place avec une concaténation de différentes valeurs.</p>
+</div>
+<div class="section" id="ajouter-une-nouvelle-observation">
+<h2>Ajouter une nouvelle observation<a class="headerlink" href="#ajouter-une-nouvelle-observation" title="Lien permanent vers ce titre"></a></h2>
+</div>
+<div class="section" id="consulter-les-nouvelles-observations">
+<h2>Consulter les nouvelles observations<a class="headerlink" href="#consulter-les-nouvelles-observations" title="Lien permanent vers ce titre"></a></h2>
 </div>
 </div>
 
@@ -106,8 +126,8 @@ L’utilité et le fonctionnement du site seront aussi expliqués.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="offre.html" class="btn btn-neutral float-left" title="Offres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="reservation.html" class="btn btn-neutral float-right" title="Réservations" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reservation.html" class="btn btn-neutral float-left" title="Réservations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="stats.html" class="btn btn-neutral float-right" title="Stats" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
