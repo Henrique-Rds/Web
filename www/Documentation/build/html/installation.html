@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registre Hygiene &mdash; Documentation Documentation développeur ICA 1.0</title>
+  <title>Installation &mdash; Documentation Documentation développeur ICA 1.0</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,9 +17,7 @@
         <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Réservations" href="reservation.html" />
-    <link rel="prev" title="Offres" href="offre.html" /> 
+    <link rel="search" title="Recherche" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,14 +51,11 @@
 <li class="toctree-l1"><a class="reference internal" href="fichiersPublic.html">Fichiers Public</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Intranet</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Registre Hygiene</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#titre-registrehygiene">Titre RegistreHygiene</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
@@ -82,9 +77,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Registre Hygiene</li>
+      <li>Installation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/registrehygiene.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/installation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -92,22 +87,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="registre-hygiene">
-<h1>Registre Hygiene<a class="headerlink" href="#registre-hygiene" title="Lien permanent vers ce titre"></a></h1>
-<div class="section" id="titre-registrehygiene">
-<h2>Titre RegistreHygiene<a class="headerlink" href="#titre-registrehygiene" title="Lien permanent vers ce titre"></a></h2>
-<p>Dans cette documentation les différentes applications seront expliquées et de nombreuses informations sur le code seront données.
-L’utilité et le fonctionnement du site seront aussi expliqués.</p>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre"></a></h1>
+<div class="section" id="installation-de-l-environnement-de-travail">
+<h2>Installation de l’environnement de travail<a class="headerlink" href="#installation-de-l-environnement-de-travail" title="Lien permanent vers ce titre"></a></h2>
+<p>Pour travailler sur le site de l’institut clément ader il va falloir installer différents logiciels.
+Pour commencer vous pouvez choisir un éditeur de code de votre choix, l’éditeur que nous utilisons est Visual Studio Code.</p>
+<p>Il faudra ensuite différents logiciels que je vais vous présenter ci-dessous.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il n’y a pas d’ordre pour l’installation des logiciels. L’ordre pour le lancement sera donné dans les explications.</p>
+</div>
+<div class="section" id="filezilla">
+<h3>FileZilla<a class="headerlink" href="#filezilla" title="Lien permanent vers ce titre"></a></h3>
+<p>FileZilla Client est un client FTP, FTPS et SFTP, développé sous la licence publique générale GNU.
+Avec ce logiciel vous pourrez gérer les fichiers du site ICA. Pour commencer vous pouvez télécharger FileZilla
+sur le lien ici : <a class="reference external" href="https://filezilla-project.org/">Télécharger FileZilla</a>
+Il vous suffit de choisir <strong>FileZilla Client</strong> et de suivre l’installation.</p>
+<p>Après installation lancez le logiciel et cliquez sur le bouton permettant d’ouvrir le gestionnaire de sites.</p>
+<img alt="images/ConnexionFTP.png" src="images/ConnexionFTP.png" />
+<p>On va maintenant installer le serveur ICA OFF. Deux serveurs et sites sont diponibles :
+- Préprod ICA, qui vous permet de tester toutes vos modifications et d’avoir un site permettant de laisser le site ICA OFF disponible pour les utilisateurs
+- Prod ICA, nommé ICA OFF sur FileZilla est le site officiel que tous les utilisateurs utilisent.</p>
+<p>Voici l’affichage du gestionnaire de sites :</p>
+<img alt="images/GestionServeurFTP.png" src="images/GestionServeurFTP.png" />
+<p>Pour vous connecter vous pouvez ajouter avec le bouton <strong>Nouveau site</strong> voici les informations
+de connexion pour les deux sites.</p>
+<div class="section" id="ica-prod">
+<h4>ICA Prod :<a class="headerlink" href="#ica-prod" title="Lien permanent vers ce titre"></a></h4>
+<ul class="simple">
+<li><p>Protocole : SFTP</p></li>
+<li><p>Hôte : 195.220.198.90</p></li>
+<li><p>Port : 50028</p></li>
+<li><p>Utilisateur : lab0612</p></li>
+<li><p>Mot de Passe : 53vw4KZxq4HF</p></li>
+</ul>
+</div>
+<div class="section" id="ica-preprod">
+<h4>ICA Préprod :<a class="headerlink" href="#ica-preprod" title="Lien permanent vers ce titre"></a></h4>
+<ul class="simple">
+<li><p>Protocole : SFTP</p></li>
+<li><p>Hôte : 195.220.198.90</p></li>
+<li><p>Port : 50025</p></li>
+<li><p>Utilisateur : lab0611</p></li>
+<li><p>Mot de Passe : R4uaGV1S2sp8</p></li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="offre.html" class="btn btn-neutral float-left" title="Offres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="reservation.html" class="btn btn-neutral float-right" title="Réservations" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
