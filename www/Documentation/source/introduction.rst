@@ -8,6 +8,11 @@ Définition de la documentation
 Cette documentation à pour but d'aider un développeur ne connaissant pas l'environnement de travail 
 de l'Institut Clément Ader à pouvoir trouver des repères dans le code.
 
+.. important::
+
+   Il y a deux site ICA, ICA Prod est le site utilisé par lu public et les internes à l'ICA et le site ICA PréProd qui 
+   permet de tester des modifications pour le site sans le rendre innutilisable pour le public. 
+
 Vous trouverez ici l'aborescence du site : `Arborescence des fichiers <https://www.gloomaps.com/nVPbNqnqAl>`__
 
 
