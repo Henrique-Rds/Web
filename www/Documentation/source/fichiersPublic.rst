@@ -33,8 +33,8 @@ Nombre d'offres
 ---------------
 
 Pour calculer le nombre d'offres on fait appel à la fonction **nombreOffresDispo** 
-Ensuite on retrouve l'affichage selon le nombre d'équipements.
-Le template appelé est : *Tableau des moyens*
+Ensuite on retrouve l'affichage selon le nombre d'offres.
+Le template appelé est : *Tableau des offres*
 
 
 Les listes
