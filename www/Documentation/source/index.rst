@@ -7,6 +7,7 @@ Site ICA
    :caption: Introduction
 
    introduction
+   installation
 
 .. toctree::
    :maxdepth: 2
