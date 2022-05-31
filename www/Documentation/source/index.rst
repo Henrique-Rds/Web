@@ -31,11 +31,11 @@ Site ICA
    equipement
    formulaire
    offre
-   registrehygiene
    reservation
+   registrehygiene
    stats
-   gestiontheses
    zrr
+   gestiontheses
    fichiersIntranet
 
 * :ref:`genindex`
