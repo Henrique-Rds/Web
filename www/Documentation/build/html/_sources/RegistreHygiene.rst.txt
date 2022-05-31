@@ -15,6 +15,7 @@ Consulter le registre contient un snippet sur Wordpress *affichage-registre-rsst
 Il y a au sommet de la page un bouton permettant de télécharger le tableau en format Excel.
 
 Dans le code on peut voir la création du tableau contenant les colonnes :
+
 - **Agent ou usager** 
 - **Observations relatives à la prévention des risques professionels et à l'amélioration des conditions de travail** ,	
 - **Date de saisie**
@@ -37,6 +38,7 @@ Consulter les nouvelles observations contient un snippet sur Wordpress *consulte
 Il y a au sommet de la page un bouton permettant de télécharger le tableau en format Excel.
 
 Dans le code on peut voir la création du tableau contenant les colonnes :
+
 - **Date de saisie**
 - **Agent ou usager** 
 - **Type d'observation** ,	
