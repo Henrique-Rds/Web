@@ -74,3 +74,19 @@ Pour l'installation du VPN de l'INSA vous avez un tutoriel sur le lien ci-contre
 
 PhpMyAdmin
 ==========
+
+Pour acceder aux base de donnée SQL via PhpMyAdmin nous avons deux liens avec différentes données de connexion.
+
+ICA Prod :
+----------
+
+- Lien vers la page PhpMyAdmin : `PhpMyAdmin Prod <https://laboffice.lamp.core-clouds.fr/phpMyAdmin/>`__
+- Utilisateur : lab0612sql3
+- Mot de passe : XY02b21aBLaq
+
+ICA PréProd :
+-------------
+
+- Lien vers la page PhpMyAdmin : `PhpMyAdmin Prod <https://laboffice.lamp.core-clouds.fr/phpMyAdmin/>`__
+- Utilisateur : lab0611sql3
+- Mot de passe : 1pm6STt9TE0n
