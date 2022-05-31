@@ -55,3 +55,13 @@ _____________
 - Utilisateur : lab0611
 - Mot de Passe : R4uaGV1S2sp8
 
+
+Une fois ajouté vous pouvez vous connecter au serveur et vous retrouverez les fichiers du site.
+Si on se connecte au site ICA Prod on retrouve :
+
+.. image:: images/ChoixWWWFTP.png
+
+Pour acceder aux dossiers il faut choisir **ica.cnrs.fr** ensuite **www** et enfin vous pouvez retrouver tous les fichiers les
+du site ICA .
+
+.. image:: images/FichiersFTP.png
