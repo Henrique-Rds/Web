@@ -64,6 +64,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#month">Month</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nouvelle-reservation">Nouvelle Réservation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
@@ -113,41 +114,41 @@ Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requ�
 <h3>Les fonctions<a class="headerlink" href="#les-fonctions" title="Lien permanent vers ce titre"></a></h3>
 <p><strong>getEventsBetween</strong> : Récupère les évènements qui sont entre deux dates.</p>
 <p><strong>getEventsBetweenByDay</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour.
-Il appelle la fonction getEventsBetween contenu dans Events.php.
+Il appelle la fonction <strong>getEventsBetween</strong> contenu dans <em>Events.php</em> .
 Pour chaque événement entre les deux dates, on récupère la date de début de l’événement et la date de fin et toutes les autres dates entre date de début et de fin que l’on renvoie.</p>
 <p><strong>getEventsBetweenByDayByMoyen</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour et par moyen.
-Il appelle la fonction dateDansUnMoisParMoyen contenu dans GestionBdd.php.
+Il appelle la fonction <strong>dateDansUnMoisParMoyen</strong> contenu dans <em>GestionBdd.php</em>.
 Pour chaque événement entre les deux dates, on récupère la date de début de l’événement et la date de fin et toutes les autres dates entre date de début et de fin que l’on renvoie.</p>
 <p><strong>getEventByDayandCategorie</strong> :Cherche un événement en fonction du jour et d’une catégorie donné.
-Il appelle la fonction getParJourEtCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getParJourEtCategorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventByDayandMoyen</strong> :Cherche un événement en fonction du jour et d’un moyen donné.
-Il appelle la fonction getParJourEtMoyen contenu dans GestionBdd.php et renvoie le résultat.</p>
+Il appelle la fonction <strong>getParJourEtMoyen</strong> contenu dans <em>GestionBdd.php</em> et renvoie le résultat.</p>
 <p><strong>getEventById</strong> :Cherche un événement par son Id .
-Il appelle la fonction getRéservationById contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getRéservationById</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getMoyenByCategorie</strong> :Cherche tous les moyens de la catégorie.
-Il appelle la fonction getMoyenCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getMoyenCategorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getResponsable</strong> :Cherche tous les responsables d’un moyen.
-Il appelle la fonction getResponsableParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getResponsableParMoyen</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>deleteEventById</strong> :Supprimer une réservation par son ID.
-Il appelle la fonction deleteReservationById contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>deleteReservationById</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventByName</strong> :Cherche tous les événements en fonction de son titre.
-Il appelle la fonction getReservationByNom contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getReservationByNom</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventByName</strong> :Cherche tous les événements en fonction de son titre.
-Il appelle la fonction getReservationByNom contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getReservationByNom</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventsByCategorie</strong> :Cherche tous les événements en fonction de la catégorie du moyen.
-Il appelle la fonction getReservationParCatégorie contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getReservationParCatégorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventsByCategorieAndUser</strong> :Cherche tous les événements en fonction de la catégorie du moyen et l’utilisateur.
-Il appelle la fonction getReservationParCatégorieEtUtilisateur contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getReservationParCatégorieEtUtilisateur</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventsByMoyen</strong> :Cherche tous les événements en fonction du moyen.
-Il appelle la fonction getReservationParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getReservationParMoyen</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getEventsByMoyenAndUser</strong> :Cherche tous les événements en fonction du moyen.
-Il appelle la fonction getReservationParMoyenEtUtilisateur contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <em>getReservationParMoyenEtUtilisateur</em> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>afficherLesCategorie</strong> :Cherche toutes les catégorie.
-Il appelle la fonction getCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getCategorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getUtiEventsByMoyen</strong> :Cherche tous les utilisateurs qui ont réservés le moyen donné.
-Il appelle la fonction getUtiReservationParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getUtiReservationParMoyen</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>getUtiEventsByCategorie</strong> :Cherche tous les utilisateurs qui ont réservé un moyen de la catégorie donné.
-Il appelle la fonction getUtiReservationParCatégorie contenu dans GestionBdd.php renvoie le résultat.</p>
+Il appelle la fonction <strong>getUtiReservationParCatégorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 </div>
 </div>
 <div class="section" id="month">
@@ -172,6 +173,67 @@ Cette classe à 4 attributs.</p>
 <p><strong>withinMouth</strong> : récupère les jours qui ne sont pas dans le mois mais dans les même semaine que le premier jour et le dernière jour du mois.</p>
 <p><strong>nextMonth</strong> : passe au mois suivant $month prend +1 et si $month = 12 alors il retourne à 1.</p>
 <p><strong>previousMonth</strong> : passe au mois précédent $month prend -1 et si $month = 1 alors il retourne à 12.</p>
+</div>
+<div class="section" id="nouvelle-reservation">
+<h2>Nouvelle Réservation<a class="headerlink" href="#nouvelle-reservation" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet de vérifier les différentes exceptions pour la création ou la modification d’une réservation.
+Ce fichier est utilisé dans <em>ajouterReservation.php</em> et <em>ModifierReservation.php</em> .
+Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requêtes.</p>
+<p><strong>Chevauchement2jours</strong> : Vérifie si la date de début de la réservation est supérieure à la date de fin.
+Si la date de début et supérieur à la date de fin la fonction renvoie true.
+Sinon renvoie false.</p>
+<p><strong>Chevauchement2heures</strong> : Vérifie si l’heure de début de la réservation est supérieure à l’heure de fin.
+Si l’heure de début et supérieur à l’heure de fin la fonction renvoie true.
+Sinon renvoie false.</p>
+<p><strong>CreationReservation</strong> : créer la réservation dans la bdd.
+Récupère toutes les infos pour créer une réservation.
+Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.php</em> .
+Appel la fonction <strong>creerReservation</strong> de <em>GestionBdd.php</em> .
+Renvoie true si tout est bon.</p>
+<p><strong>chevauchementMemeMoyen</strong> : vérifie si le moyen de la réservation n’est pas déjà réserver pendant l’intervalle.
+Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.php</em> .
+Récupère la date de début et on ajoute 1 minute.
+Récupère la date de fin et on enlève 1 minute.
+Appel la fonction <strong>verificationChevauchementMemeMoyen</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p>chevauchementMemeUtilisateur : vérifie si l’utilisateur de la réservation n’a pas déjà réserver pendant l’intervalle.
+Appel la fonction <strong>fusionDateEtHeure</strong> de NouvelleReservation.php.
+Récupère la date de début et on ajoute 1 minute.
+Récupère la date de fin et on enlève 1 minute.
+Appel la fonction <strong>verificationChevauchementMemeUtilisateur</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>fusionDateEtHeure</strong> : fusionne la date et l’heure pour faire un type DATETIME et renvoie le datetime.</p>
+<p><strong>separeDateEtHeure</strong> :  sépare la date et l’heure pour avoir un type Date et l’autre Time et renvoie les deux type dans un tableau.</p>
+<p><strong>getMoyenParCategorie</strong> : Recherche les moyens en fonction de leur catégorie.
+Appel la fonction <strong>getMoyensCategorie</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>afficherLesEncadrant</strong> : Recherche les encadrants possible.
+Appel la fonction getEncadrantPossible de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>getEventById</strong> : Recherche une réservation en fonction de son Id.
+Appel la fonction getReservationById de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>modifierReservation</strong> : modifie la réservation dans la bdd.
+Récupère toutes les infos pour créer une réservation.
+Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.php</em> .
+Appel la fonction <strong>updateReservationById</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>chevauchementMemeMoyenIdDifferent</strong> : vérifie si le moyen de la réservation n’est pas déjà réserver pendant l’intervalle sans compter les réservations qui ont le même Id.
+Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.php</em> .
+Récupère la date de début et on ajoute 1 minute.
+Récupère la date de fin et on enlève 1 minute.
+Appel la fonction <strong>verificationChevauchementMemeMoyenIdDifferent</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>chevauchementMemeUtilisateur</strong> : vérifie si l’utilisateur de la réservation n’a pas déjà réserver pendant l’intervalle sans compter les réservations qui ont le même Id.
+Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.php</em> .
+Récupère la date de début et on ajoute 1 minute.
+Récupère la date de fin et on enlève 1 minute.
+Appel la fonction <strong>verificationChevauchementMemeUtilisateurIdDifferent</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>envoieMailAjout</strong> : Envoie un mail au responsable pour chaque ajout d’une réservation.
+Récupère toutes les infos de la réservation.
+Appel la fonction <strong>getResponsableParMoyen</strong> de <em>GestionBdd.php</em>.
+Appel la fonction <strong>RechercheMailResponsable</strong> de <em>GestionBdd.php</em>.
+Envoie le mail au différent responsable récupérer via RechercheMailResponsable.</p>
+<p><strong>afficherLesCategorie</strong> :Cherche toutes les catégorie.
+Il appelle la fonction <strong>getCategorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
+<p><strong>envoieMailModif</strong> : Envoie un mail au responsable pour chaque modification d’une réservation.
+Récupère toutes les infos de la réservation.
+Appel la fonction <strong>getResponsableParMoyen</strong> de <em>GestionBdd.php</em>.
+Appel la fonction <strong>rechercheMailResponsable</strong> de <em>GestionBdd.php</em>.
+Envoie le mail au différent responsable récupérer via RechercheMailResponsable.</p>
 </div>
 </div>
 
