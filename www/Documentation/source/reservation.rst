@@ -440,6 +440,8 @@ On appelle **getUtiEventsByCategorie** de *Events.php* avec la catégorie et les
 Si parmi les résultats de **getUtiEventsByCategorie** s’il y en a un qui est égal à l’utilisateur dans la SESSION alors on appelle **getEventsByCategorieAndUser** de *Events.php* avec la catégorie dans la SESSION ainsi que les deux dates.
 On appelle getMoyenParCategorie de *Events.php* avec la catégorie récupérée
 
+Si parmi les résultats de **getMoyenParCategorie** s’il y en a un qui est égal au moyen dans la SESSION alors on appelle **getEventsByMoyen** de *Events.php* avec l’utilisateur dans la SESSION ainsi que les deux dates et on appelle **getUtiEventsByMoyen** avec le moyen dans la SESSION ainsi que les deux dates.
+    On parcourt tous les résultats de la requête **getUtiEventsByMoyen** et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors on appelle **getEventsByMoyenAndUser** de *Events.php* avec le moyen dans la session. 
 
 Le premier formulaire est constitué de deux menus déroulants l’un les catégories affichées via **afficherLesCatégorie** de *Events.php* et le moyen via **getMoyenParCategorie** de *Events.php* avec la catégorie récupèrer.
 
