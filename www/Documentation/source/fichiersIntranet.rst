@@ -26,7 +26,7 @@ On y récupère avec le POST le nombre qui sera attribué à la variable *$nb* .
 Ensuite on retrouve le fonctionnement du submit permettant l'envoie des données. Celui-ci permet de rechercher par éléments précisés par l'utilisateur la liste.
 
 
-supprimer projet
+Supprimer projet
 ================
 
 Pour supprimer un projet on vérifie qu'un id à été transmis avec le *$_POST*.

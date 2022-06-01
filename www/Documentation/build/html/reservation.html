@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Stats" href="stats.html" />
+    <link rel="next" title="Registre Hygiene" href="registrehygiene.html" />
     <link rel="prev" title="Offres" href="offre.html" /> 
 </head>
 
@@ -58,8 +58,13 @@
 <li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Réservations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Réservations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
 </ul>
@@ -90,6 +95,54 @@
              
   <div class="section" id="reservations">
 <h1>Réservations<a class="headerlink" href="#reservations" title="Lien permanent vers ce titre"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nous allons voir ici la page la plus complexe de tout le site, il est conseillé d’utiliser une recherche navigateur (ctrl+f) pour
+retrouver plus facilement les informations qui vous sont nécéssaires.</p>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet de récupérer les événements (réservations) en fonction de différentes options.
+Ce fichier est utilisé dans <em>afficherjournee.php</em>, <em>calendrier.php</em>, <em>getCalendrier.php</em>, <em>getTableau.php</em>, <em>GetMoyen.php</em>, <em>mesReservation.php</em>, <em>supprimerReservation.php</em>, <em>tableauReservation.php</em> et <em>voirReservation.php</em>.
+Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requêtes.</p>
+<p><strong>getEventsBetween</strong> : Récupère les évènements qui sont entre deux dates.</p>
+<p><strong>getEventsBetweenByDay</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour.
+Il appelle la fonction getEventsBetween contenu dans Events.php.
+Pour chaque événement entre les deux dates, on récupère la date de début de l’événement et la date de fin et toutes les autres dates entre date de début et de fin que l’on renvoie.</p>
+<p><strong>getEventsBetweenByDayByMoyen</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour et par moyen.
+Il appelle la fonction dateDansUnMoisParMoyen contenu dans GestionBdd.php.
+Pour chaque événement entre les deux dates, on récupère la date de début de l’événement et la date de fin et toutes les autres dates entre date de début et de fin que l’on renvoie.</p>
+<p><strong>getEventByDayandCategorie</strong> :Cherche un événement en fonction du jour et d’une catégorie donné.
+Il appelle la fonction getParJourEtCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventByDayandMoyen</strong> :Cherche un événement en fonction du jour et d’un moyen donné.
+Il appelle la fonction getParJourEtMoyen contenu dans GestionBdd.php et renvoie le résultat.</p>
+<p><strong>getEventById</strong> :Cherche un événement par son Id .
+Il appelle la fonction getRéservationById contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getMoyenByCategorie</strong> :Cherche tous les moyens de la catégorie.
+Il appelle la fonction getMoyenCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getResponsable</strong> :Cherche tous les responsables d’un moyen.
+Il appelle la fonction getResponsableParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>deleteEventById</strong> :Supprimer une réservation par son ID.
+Il appelle la fonction deleteReservationById contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventByName</strong> :Cherche tous les événements en fonction de son titre.
+Il appelle la fonction getReservationByNom contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventByName</strong> :Cherche tous les événements en fonction de son titre.
+Il appelle la fonction getReservationByNom contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventsByCategorie</strong> :Cherche tous les événements en fonction de la catégorie du moyen.
+Il appelle la fonction getReservationParCatégorie contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventsByCategorieAndUser</strong> :Cherche tous les événements en fonction de la catégorie du moyen et l’utilisateur.
+Il appelle la fonction getReservationParCatégorieEtUtilisateur contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventsByMoyen</strong> :Cherche tous les événements en fonction du moyen.
+Il appelle la fonction getReservationParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getEventsByMoyenAndUser</strong> :Cherche tous les événements en fonction du moyen.
+Il appelle la fonction getReservationParMoyenEtUtilisateur contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>afficherLesCategorie</strong> :Cherche toutes les catégorie.
+Il appelle la fonction getCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getUtiEventsByMoyen</strong> :Cherche tous les utilisateurs qui ont réservés le moyen donné.
+Il appelle la fonction getUtiReservationParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
+<p><strong>getUtiEventsByCategorie</strong>:Cherche tous les utilisateurs qui ont réservé un moyen de la catégorie donné.
+Il appelle la fonction getUtiReservationParCatégorie contenu dans GestionBdd.php renvoie le résultat.</p>
+</div>
 </div>
 
 
@@ -97,7 +150,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="offre.html" class="btn btn-neutral float-left" title="Offres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="stats.html" class="btn btn-neutral float-right" title="Stats" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="registrehygiene.html" class="btn btn-neutral float-right" title="Registre Hygiene" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
