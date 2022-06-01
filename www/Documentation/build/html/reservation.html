@@ -60,16 +60,21 @@
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Réservations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#events">Events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#les-fonctions">Les fonctions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-fonctions-event">Les fonctions Event</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#month">Month</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#month">Month</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-fonctions-month">Les fonctions Month</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#nouvelle-reservation">Nouvelle Réservation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#afficher-journee">Afficher Journée</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ajouter-reservation">Ajouter Reservation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calendrier">Calendrier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-calendrier">Get Calendrier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-mon-tableau">Get Mon Tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-moyen">Get Moyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-tableau">Get Tableau</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
@@ -115,8 +120,8 @@ retrouver plus facilement les informations qui vous sont nécéssaires.</p>
 <p>Ce fichier permet de récupérer les événements (réservations) en fonction de différentes options.
 Ce fichier est utilisé dans <em>afficherjournee.php</em> , <em>calendrier.php</em> , <em>getCalendrier.php</em> , <em>getTableau.php</em> , <em>GetMoyen.php</em> , <em>mesReservation.php</em> , <em>supprimerReservation.php</em> , <em>tableauReservation.php</em> et <em>voirReservation.php</em> .
 Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requêtes.</p>
-<div class="section" id="les-fonctions">
-<h3>Les fonctions<a class="headerlink" href="#les-fonctions" title="Lien permanent vers ce titre"></a></h3>
+<div class="section" id="les-fonctions-event">
+<h3>Les fonctions Event<a class="headerlink" href="#les-fonctions-event" title="Lien permanent vers ce titre"></a></h3>
 <p><strong>getEventsBetween</strong> : Récupère les évènements qui sont entre deux dates.</p>
 <p><strong>getEventsBetweenByDay</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour.
 Il appelle la fonction <strong>getEventsBetween</strong> contenu dans <em>Events.php</em> .
@@ -168,6 +173,8 @@ Cette classe à 4 attributs.</p>
 <li><p><em>$month</em> le mois sélectionner.</p></li>
 <li><p><em>$year</em> l’année sélectionner.</p></li>
 </ul>
+<div class="section" id="les-fonctions-month">
+<h3>Les fonctions Month<a class="headerlink" href="#les-fonctions-month" title="Lien permanent vers ce titre"></a></h3>
 <p><strong>Constructeur</strong> : à en paramètre le numéro du mois et l’année pour déterminer le nombre de jour dans le mois.</p>
 <p><strong>getDays</strong> : récupère <em>$days</em>.</p>
 <p><strong>getMonth</strong> : récupère <em>$month</em>.</p>
@@ -178,6 +185,7 @@ Cette classe à 4 attributs.</p>
 <p><strong>withinMouth</strong> : récupère les jours qui ne sont pas dans le mois mais dans les même semaine que le premier jour et le dernière jour du mois.</p>
 <p><strong>nextMonth</strong> : passe au mois suivant $month prend +1 et si $month = 12 alors il retourne à 1.</p>
 <p><strong>previousMonth</strong> : passe au mois précédent $month prend -1 et si $month = 1 alors il retourne à 12.</p>
+</div>
 </div>
 <div class="section" id="nouvelle-reservation">
 <h2>Nouvelle Réservation<a class="headerlink" href="#nouvelle-reservation" title="Lien permanent vers ce titre"></a></h2>
@@ -300,6 +308,78 @@ On grise les jours qui ne sont pas dans le mois via <strong>withinMonth</strong>
 </div>
 <div class="section" id="get-mon-tableau">
 <h2>Get Mon Tableau<a class="headerlink" href="#get-mon-tableau" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’actualiser le tableau de la page ‘Mes réservations’ en fonction du filtre des menus déroulants.
+Ce fichier est utilisé dans la page ‘Mes réservations’ grâce au Javascript.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<p>On récupère les GET de la date de début et de fin (sachant que par défaut date de début et la date du jour et la date de fin 1er janvier 3000).</p>
+<p>On appelle <strong>getEventByName</strong> de <em>Event.php</em> avec le nom d’utilisateur et les deux dates qui vont permettre de récupérer les réservations.
+S’il n’y a pas de résultat dans la requête alors on affiche un message pour dire qu’il n’y a pas de réservation.
+Sinon On affiche la requête dans un tableau.</p>
+<p>Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
+</div>
+<div class="section" id="get-moyen">
+<h2>Get Moyen<a class="headerlink" href="#get-moyen" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet de changer la liste déroulant des moyens en fonction de la catégorie choisi.
+Ce fichier est utilisé dans la page ‘Calendrier des réservation’ et ‘Tableau des réservation’ grâce au Javascript.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes.
+On appelle la fonction <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie dans le GET pour récupérer tous les moyens dans la catégorie.
+Si le moyen dans la SESSION est égal à un des résultats de la requête alors on le sélectionne dans le menu.</p>
+</div>
+<div class="section" id="get-tableau">
+<h2>Get Tableau<a class="headerlink" href="#get-tableau" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’actualiser le tableau de la page ‘Tableau des réservations’ en fonction du filtre des menus déroulants.
+Ce fichier est utilisé dans la page ‘Tableau des réservations’ grâce au Javascript.
+Ce fichier import <strong>Events.php</strong> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+On récupère les GET de la date de début et de fin (sachant que par défaut date de début et la date du jour et la date de fin 1er janvier 3000).
+S’il y a la catégorie dans le GET existe alors on appelle getEventsByCategorie de <strong>Events.php</strong> avec la catégorie dans le GET ainsi que les deux dates et on met la catégorie dans le GET dans la SESSION.
+S’il y a un utilisateur dans le GET alors :
+S’il n’est pas null alors on le récupère et on appelle getEventsByCategorieAndUser de <strong>Events.php</strong> avec la catégorie et l’utilisateur dans le GET ainsi que les deux dates et on met l’utilisateur dans le GET dans la SESSION.
+Sinon on met juste l’utilisateur null dans la SESSION.
+Sinon on appelle getUtiEventsByCategorie de <strong>Events.php</strong> avec la catégorie dans le GET ainsi que les deux dates.
+Si parmi les résultats de getUtiEventsByCategorie s’il y en a un qui est égal à l’utilisateur dans la SESSION alors on appelle getEventsByCategorieAndUser de <strong>Events.php</strong> avec la catégorie dans le GET ainsi que les deux dates.
+On appelle getMoyenParCategorie de <strong>Events.php</strong> avec la catégorie dans le GET ainsi que les deux dates et on récupère le résultat.
+Si parmi les résultats de getEventsByMoyen s’il y en a un qui est égal à l’utilisateur dans la SESSION alors on appelle getEventsByCategorieAndUser de <strong>Events.php</strong> avec l’utilisateur dans la SESSION ainsi que les deux dates.
+On parcourt tous les éléments de la requête de getEventsByMoyen et si un des résultats est égal au moyen dans la session alors.
+On appelle getEventsByMoyen de <strong>Events.php</strong> avec le moyen dans la SESSION ainsi que les deux dates et on récupère le résultat.
+S’il y a un utilisateur dans le GET alors :</p>
+<blockquote>
+<div><p>Si l’utilisateur dans le GET n’est pas null alors :</p>
+</div></blockquote>
+<dl>
+<dt>On appelle getEventsByMoyenAndUser de <strong>Events.php</strong> avec le moyen dans la SESSION ainsi que les deux dates et on récupère le résultat et on met le nom d’utilisateur dans la SESSION l’utilisateur.</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>Sinon :</dt><dd><p>On met l’utilisateur dans la SESSION a null.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Sinon :</p>
+</dd>
+</dl>
+<p>On appelle getUtiEventsByMoyen avec le moyen dans la SESSION ainsi que les deux dates et on parcourt tous les résultats de la requête et Si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors :
+On appelle getEventsByMoyenAndUser avec le moyen dans la SESSION et de l’utilisateur ainsi que les deux dates.
+Sinon s’il y a un moyen dans le GET et il est différent de null alors :
+On met le moyen dans le GET dans la SESSION et on appelle getEventsByMoyen de <strong>Events.php</strong> avec le moyen dans le GET ainsi que les deux dates.
+S’il y a un utilisateur dans le GET alors :</p>
+<blockquote>
+<div><p>Si l’utilisateur dans le GET n’est pas null alors :</p>
+</div></blockquote>
+<dl>
+<dt>On appelle getEventsByMoyenAndUser de <strong>Events.php</strong> avec le moyen dans le GET ainsi que les deux dates et on récupère le résultat et on met le nom d’utilisateur dans la SESSION.</dt><dd><blockquote>
+<div><dl class="simple">
+<dt>Sinon :</dt><dd><p>On met l’utilisateur dans la SESSION a null.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Sinon :</p>
+</dd>
+</dl>
+<p>On appelle getUtiEventsByMoyen avec le moyen dans le GET ainsi que les deux dates et on parcourt tous les résultats de la requête et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors :
+On appelle getEventsByMoyenAndUser avec le moyen dans le GET et nom d’utilisateur dans la SESSION ainsi que les deux dates.
+Sinon on appelle getUtiEventsByCategorie de <strong>Events.php</strong> avec la catégorie dans la SESSION et les deux dates et on parcourt tous les résultats de la requête et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors :
+On appelle getEventsByCategorieAndUser de <strong>Events.php</strong> avec la catégorie dans la SESSION et du nom d’utilisateur ainsi que les deux dates.</p>
+<p>S’il n’y a pas de résultat dans la requête alors on affiche un message pour dire qu’il n’y a pas de réservation.
+Sinon On affiche la requête dans un tableau.
+Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
 </div>
 </div>
 
