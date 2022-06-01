@@ -447,7 +447,7 @@ On appelle <strong>separeDateEtHeure</strong> de <em>NouvelleReservation.php</em
 <p>L’utilisateur via le formulaire va écrire toutes les informations qu’il veut mettre sauf nom d’utilisateur qui est récupéré via le nom de l’utilisateur courant et encadrant s’il n’est pas doctorant.</p>
 <p>Pour chaque rubrique du formulaire on affiche le résultat de la requête <strong>GetEventById</strong> s’il contient des choses sinon on n’affiche rien.
 Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.</p>
-<p>Le menu déroulant Moyen appelle <strong>afficherLesCategorie</strong> et <a href="#id1"><span class="problematic" id="id2">**</span></a>getMoyenParCategorie <a href="#id3"><span class="problematic" id="id4">**</span></a>de <em>NouvelleReservation.php</em> pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.</p>
+<p>Le menu déroulant Moyen appelle <strong>afficherLesCategorie</strong> et <strong>getMoyenParCategorie</strong> de <em>NouvelleReservation.php</em> pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.</p>
 <p>Le menu déroulant Encadrant appelle <strong>afficehrLesEncadrant</strong> de <em>NouvelleReservation.php</em> pour afficher tous les encadrants possibles.</p>
 <p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyenIdDifferent</strong> , <strong>chevauchementMemeUtilisateurIdDifferent</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via <strong>envoieMailModif</strong> de <em>NouvelleReservation.php</em> et on crée la réservation via <strong>modifierReservation</strong> de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
@@ -462,9 +462,38 @@ S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la 
 </div>
 <div class="section" id="tableau-des-reservations">
 <h2>Tableau des Reservations<a class="headerlink" href="#tableau-des-reservations" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’afficher les réservations sous forme de tableau, il permet aussi de filtrer les réservations avec la catégorie, le moyen, les dates, ou l’utilisateur.
+Ce fichier est utilisé dans la page ‘Tableau des réservations’.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+On initialise la date de début avec la date courante et la date de fin avec 3000-01-01.</p>
+<p>Si la SESSION contient une catégorie alors on la récupère sinon on prend la première catégorie de la liste (simulateur numérique).
+On appelle <strong>getEventsByCategorie</strong> de <em>Events.php</em> avec la catégorie et les deux dates.
+On appelle <strong>getUtiEventsByCategorie</strong> de <em>Events.php</em> avec la catégorie et les deux dates.</p>
+<p>Si parmi les résultats de <strong>getUtiEventsByCategorie</strong> s’il y en a un qui est égal à l’utilisateur dans la SESSION alors on appelle <strong>getEventsByCategorieAndUser</strong> de <em>Events.php</em> avec la catégorie dans la SESSION ainsi que les deux dates.
+On appelle getMoyenParCategorie de <em>Events.php</em> avec la catégorie récupérée</p>
+<dl class="simple">
+<dt>Si parmi les résultats de <strong>getMoyenParCategorie</strong> s’il y en a un qui est égal au moyen dans la SESSION alors on appelle <strong>getEventsByMoyen</strong> de <em>Events.php</em> avec l’utilisateur dans la SESSION ainsi que les deux dates et on appelle <strong>getUtiEventsByMoyen</strong> avec le moyen dans la SESSION ainsi que les deux dates.</dt><dd><p>On parcourt tous les résultats de la requête <strong>getUtiEventsByMoyen</strong> et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors on appelle <strong>getEventsByMoyenAndUser</strong> de <em>Events.php</em> avec le moyen dans la session.</p>
+</dd>
+</dl>
+<p>Le premier formulaire est constitué de deux menus déroulants l’un les catégories affichées via <strong>afficherLesCatégorie</strong> de <em>Events.php</em> et le moyen via <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie récupèrer.</p>
+<p>Le deuxième formulaire est constitué de deux inputs de type date pour filtrer les réservations selon la date de début et de fin.</p>
+<p>Le troisième formulaire est constitué de 1 menu déroulant pour les utilisateurs avec une des requêtes <strong>getUti</strong> conservée.</p>
+<p>On récupère tous les résultats de la requête dans le menu déroulant et s’il est égal à l’utilisateur dans la SESSION alors on l’affiche.</p>
+<p>Si le résultat de la requête <strong>getEvents</strong> sélectionnée est null alors on affiche un message.
+Sinon on affiche les résultats dans un tableau.
+Le lien ‘consulter’ permet d’accéder à la page réservations.</p>
 </div>
 <div class="section" id="voir-reservation">
 <h2>Voir Reservation<a class="headerlink" href="#voir-reservation" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’afficher une réservation.
+Ce fichier est utilisé dans la page ‘Réservation’.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la page ‘Calendrier des réservations’.</p>
+<p>On appelle <strong>GetEventById</strong> de <em>Events.php</em> avec l’id dans le GET pour récupérer la réservation à afficher.</p>
+<p>On affiche la réservation.</p>
+<p>On appelle <strong>getResponsable</strong> de <em>Events.php</em> avec le moyen de la réservation.</p>
+<p>On récupère le nom de l’utilisateur courant.
+Si l’utilisateur courant et l’utilisateur qui a réservé, l’encadrant ou un des responsables de la réservation alors on affiche les boutons modifier et supprimer qui renvoient à modifier une réservation et supprimer une réservation.</p>
 </div>
 </div>
 

@@ -404,7 +404,7 @@ L’utilisateur via le formulaire va écrire toutes les informations qu’il veu
 Pour chaque rubrique du formulaire on affiche le résultat de la requête **GetEventById** s’il contient des choses sinon on n’affiche rien.
 Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.
 
-Le menu déroulant Moyen appelle **afficherLesCategorie** et **getMoyenParCategorie **de *NouvelleReservation.php* pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.
+Le menu déroulant Moyen appelle **afficherLesCategorie** et **getMoyenParCategorie** de *NouvelleReservation.php* pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.
 
 Le menu déroulant Encadrant appelle **afficehrLesEncadrant** de *NouvelleReservation.php* pour afficher tous les encadrants possibles.
 
@@ -427,6 +427,50 @@ On appelle **deleteEventById** de *Events.php* avec l’id dans le GET et on le 
 Tableau des Reservations
 ========================
 
+Ce fichier permet d’afficher les réservations sous forme de tableau, il permet aussi de filtrer les réservations avec la catégorie, le moyen, les dates, ou l’utilisateur.
+Ce fichier est utilisé dans la page ‘Tableau des réservations’.
+
+Ce fichier import *Events.php* qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+On initialise la date de début avec la date courante et la date de fin avec 3000-01-01.
+
+Si la SESSION contient une catégorie alors on la récupère sinon on prend la première catégorie de la liste (simulateur numérique).
+On appelle **getEventsByCategorie** de *Events.php* avec la catégorie et les deux dates.
+On appelle **getUtiEventsByCategorie** de *Events.php* avec la catégorie et les deux dates.
+
+Si parmi les résultats de **getUtiEventsByCategorie** s’il y en a un qui est égal à l’utilisateur dans la SESSION alors on appelle **getEventsByCategorieAndUser** de *Events.php* avec la catégorie dans la SESSION ainsi que les deux dates.
+On appelle getMoyenParCategorie de *Events.php* avec la catégorie récupérée
+
+Si parmi les résultats de **getMoyenParCategorie** s’il y en a un qui est égal au moyen dans la SESSION alors on appelle **getEventsByMoyen** de *Events.php* avec l’utilisateur dans la SESSION ainsi que les deux dates et on appelle **getUtiEventsByMoyen** avec le moyen dans la SESSION ainsi que les deux dates.
+    On parcourt tous les résultats de la requête **getUtiEventsByMoyen** et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors on appelle **getEventsByMoyenAndUser** de *Events.php* avec le moyen dans la session. 
+
+Le premier formulaire est constitué de deux menus déroulants l’un les catégories affichées via **afficherLesCatégorie** de *Events.php* et le moyen via **getMoyenParCategorie** de *Events.php* avec la catégorie récupèrer.
+
+Le deuxième formulaire est constitué de deux inputs de type date pour filtrer les réservations selon la date de début et de fin.
+
+Le troisième formulaire est constitué de 1 menu déroulant pour les utilisateurs avec une des requêtes **getUti** conservée. 
+
+On récupère tous les résultats de la requête dans le menu déroulant et s’il est égal à l’utilisateur dans la SESSION alors on l’affiche.
+
+Si le résultat de la requête **getEvents** sélectionnée est null alors on affiche un message. 
+Sinon on affiche les résultats dans un tableau.
+Le lien ‘consulter’ permet d’accéder à la page réservations.
+
+
 Voir Reservation
 ================
+
+Ce fichier permet d’afficher une réservation.
+Ce fichier est utilisé dans la page ‘Réservation’.
+
+Ce fichier import *Events.php* qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la page ‘Calendrier des réservations’.
+
+On appelle **GetEventById** de *Events.php* avec l’id dans le GET pour récupérer la réservation à afficher.
+
+On affiche la réservation.
+
+On appelle **getResponsable** de *Events.php* avec le moyen de la réservation.
+
+On récupère le nom de l’utilisateur courant.
+Si l’utilisateur courant et l’utilisateur qui a réservé, l’encadrant ou un des responsables de la réservation alors on affiche les boutons modifier et supprimer qui renvoient à modifier une réservation et supprimer une réservation.
 
