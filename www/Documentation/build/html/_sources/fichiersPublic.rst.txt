@@ -16,8 +16,8 @@ Composition de la page
 Page Equipements
 ----------------
 
-Si nous observons les widget qui composent cette page nous pouvons observer qu'il y a un widget **MetaSlider** qui permet d'afficher un diaporama sur la page.
-Parmis ces widget nous pouvons retrouver un **Insert Snippet** faisant appel à la page décrite plus bas dans la documentation.
+Si nous observons les widgets qui composent cette page nous pouvons observer qu'il y a un widget **MetaSlider** qui permet d'afficher un diaporama sur la page.
+Parmis ces widgets nous pouvons retrouver un **Insert Snippet** faisant appel à la page décrite plus bas dans la documentation.
 De plus on peut aussi trouver un bouton menant à la page de réservation des équipements ainsi qu'un widget **SiteOrigin Editeur** ajoutant un titre.
 
 Le nombre d'equipement et d'offres

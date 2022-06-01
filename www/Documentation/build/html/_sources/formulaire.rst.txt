@@ -28,7 +28,7 @@ Les selects présents sont : id,axe_1,axe_2,axe_3,etablissement,actv_rech.
 Modification d'un utilisateur
 =============================
 
-Cette page reprend un code très similaire à celui présent au dessus les différences se trouvent dans les widget.
+Cette page reprend un code très similaire à celui présent au dessus les différences se trouvent dans les widgets.
 On ne fait appel à aucun pod dans le gestionnaire actuel.
 
 Certains éléments ont étés retirés du formulaire.

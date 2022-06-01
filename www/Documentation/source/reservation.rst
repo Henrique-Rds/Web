@@ -62,7 +62,7 @@ Il appelle la fonction **getReservationParMoyen** contenu dans *GestionBdd.php* 
 **getEventsByMoyenAndUser** :Cherche tous les événements en fonction du moyen.
 Il appelle la fonction *getReservationParMoyenEtUtilisateur* contenu dans *GestionBdd.php* renvoie le résultat.
 
-**afficherLesCategorie** :Cherche toutes les catégorie.
+**afficherLesCategorie** :Cherche toutes les catégories.
 Il appelle la fonction **getCategorie** contenu dans *GestionBdd.php* renvoie le résultat.
 
 **getUtiEventsByMoyen** :Cherche tous les utilisateurs qui ont réservés le moyen donné.
@@ -176,7 +176,7 @@ Appel la fonction **getResponsableParMoyen** de *GestionBdd.php*.
 Appel la fonction **RechercheMailResponsable** de *GestionBdd.php*. 
 Envoie le mail au différent responsable récupérer via **RechercheMailResponsable**.
 
-**afficherLesCategorie** :Cherche toutes les catégorie.
+**afficherLesCategorie** :Cherche toutes les catégories.
 Il appelle la fonction **getCategorie** contenu dans *GestionBdd.php* renvoie le résultat.
 
 **envoieMailModif** : Envoie un mail au responsable pour chaque modification d’une réservation.

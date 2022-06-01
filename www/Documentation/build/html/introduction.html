@@ -108,7 +108,7 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre"></a></h1>
 <div class="section" id="definition-de-la-documentation">
 <h2>Définition de la documentation<a class="headerlink" href="#definition-de-la-documentation" title="Lien permanent vers ce titre"></a></h2>
-<p>Cette documentation à pour but d’aider un développeur ne connaissant pas l’environnement de travail
+<p>Cette documentation a pour but d’aider un développeur ne connaissant pas l’environnement de travail
 de l’Institut Clément Ader à pouvoir trouver des repères dans le code.</p>
 <div class="admonition warning">
 <p class="admonition-title">Avertissement</p>
@@ -120,11 +120,11 @@ permet de tester des modifications pour le site sans le rendre innutilisable pou
 Premièrement les pages se situent dans le dossier App.
 Celui-ci contient les dossiers Public et Intranet que nous verrons plus tard.
 De plus des fichiers se trouvent dans ce même dossier, ce sont des fichiers « globaux » qui seront utilisés
-dans la plus part des pages.</p>
+dans la plupart des pages.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Certaines pages utilisées dans l’intranet peuvent aussi être utilisées dans la partie public. Il est donc important
-de vérifier que les modifications ne cassent pas les deux pages.</p>
+<p>Certaines pages utilisées dans l’intranet peuvent aussi être utilisées dans la partie public.
+Lors de modifications, il est important d’effectuer des tests de non régression.</p>
 </div>
 <div class="section" id="le-dossier-public">
 <h3>Le dossier Public<a class="headerlink" href="#le-dossier-public" title="Lien permanent vers ce titre"></a></h3>
@@ -142,7 +142,9 @@ gestion des theses de l’Intranet permet de gerer les theses vues par le public
 <h2>La gestion sur WordPress<a class="headerlink" href="#la-gestion-sur-wordpress" title="Lien permanent vers ce titre"></a></h2>
 <div class="section" id="les-snippet">
 <h3>Les snippet<a class="headerlink" href="#les-snippet" title="Lien permanent vers ce titre"></a></h3>
-<p>Pour gérer les snippet appelés dans les pages wordPress il suffit d’aller dans la catégorie <strong>XYZ PHP Code</strong> dans la liste du menu WordPress.</p>
+<p>Les snippets sont des widget définis sur WordPress, ils représentent le chemin d’accès vers une page php. Ces snippets sont réutilisables lors de la composition d’une page.
+Pour éviter de réecrire la totalité du code nous faisons appel à un widget snippet dans le gestionnaire de page WordPress.</p>
+<p>Pour gérer les snippets appelés dans les pages wordPress il suffit d’aller dans la catégorie <strong>XYZ PHP Code</strong> dans la liste du menu WordPress.</p>
 <p>Voici un lien pour aller directement sur la page des snippet : <a class="reference external" href="https://ica.cnrs.fr/wp-admin/admin.php?page=insert-php-code-snippet-manage">Snippet WordPress</a></p>
 </div>
 <div class="section" id="les-pages">
@@ -154,14 +156,16 @@ gestion des theses de l’Intranet permet de gerer les theses vues par le public
 </div>
 <div class="section" id="les-pods">
 <h3>Les pods<a class="headerlink" href="#les-pods" title="Lien permanent vers ce titre"></a></h3>
-<p>Pour les pods utilisés dans le code on peut aussi les retrouver la liste du menu WordPress avec la catégorie <strong>Administration</strong> et ensuite sélectionner <strong>Pods Page</strong></p>
+<p>L’extension <strong>Pods</strong> WordPress ajoute l’utilisation des pods sur notre site.</p>
+<p>Les pods sont des tables WordPress permettant de créer des tables de la base de donnée, ces tables seront utilisées dans phpMyAdmin.
+Pour les pods utilisés dans le code on peut aussi les retrouver la liste du menu WordPress avec la catégorie <strong>Administration</strong> et ensuite sélectionner <strong>Pods Page</strong></p>
 <p>Voici un lien pour aller directement sur la liste des pods page. <a class="reference external" href="https://ica.cnrs.fr/wp-admin/admin.php?page=pods">Pods Page WordPress</a></p>
 </div>
 <div class="section" id="les-tableaux-wordpress">
 <h3>Les tableaux WordPress<a class="headerlink" href="#les-tableaux-wordpress" title="Lien permanent vers ce titre"></a></h3>
 <p>Il est possible de trouver de nombreux tableaux sur le site ICA cependant ils ne sont pas tous codés de la même façon.
-Pour certains nous faisons appel à des pod spéciaux car ils sont liés à des tableaux WordPress.
-Pour les retrouvrer il faut se diriger vers la liste du menu WordPress avec la catégorie <strong>Administration</strong> et ensuite sélectionner <strong>Pods Templates</strong></p>
+Pour certains nous faisons appel à des pods spéciaux car ils sont liés à des tableaux WordPress.
+Pour les retrouver il faut se diriger vers la liste du menu WordPress avec la catégorie <strong>Administration</strong> et ensuite sélectionner <strong>Pods Templates</strong></p>
 <p>Voici un lien pour aller directement sur la liste des pods template permettant l’utilisation des tableaux. <a class="reference external" href="https://ica.cnrs.fr/wp-admin/edit.php?post_type=_pods_template">Pods Template WordPress</a></p>
 </div>
 </div>

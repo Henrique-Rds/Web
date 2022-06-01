@@ -30,4 +30,4 @@ Supprimer projet
 ================
 
 Pour supprimer un projet on vérifie qu'un id à été transmis avec le *$_POST*.
-Ensuite on fais appel à la requête **suprimerProjet1** prenant pour parametre le *$id* récupéré avec le post.
+Ensuite on fait appel à la requête **suprimerProjet1** prenant pour parametre le *$id* récupéré avec le post.

@@ -35,5 +35,5 @@ sont :
 - **supprimerDoctorantTableUserMeta**
 - **supprimerDoctorantTablePodsrel**
 
-Ensuite le reste du code présente le tableau, dans les <td> on peut retrouver les différentes parties des lignes : texte, variables , formulaire ...
+Ensuite le reste du code présente le tableau, dans les <td> on peut retrouver les différentes parties des lignes : textes, variables , formulaires ...
 

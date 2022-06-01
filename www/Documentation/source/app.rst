@@ -12,7 +12,7 @@ sont pour la plus part réutilisés dans la majorité des pages du site.
 Le fichier database
 ===================
 
-Ce fichier à une utilité très simple, il permet la connexion avec la base de donnée.
+Ce fichier a une utilité très simple, il permet la connexion avec la base de donnée.
 On peut y retrouver l'id du serveur auquel on souhaite se connecter, le nom du serveur, le pseudo de connexion
 ainsi que le mot de passe pour se connecter.
 Ces identifiants de connexion sont définis dans des variables réutilisables.

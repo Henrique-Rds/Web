@@ -2,7 +2,7 @@
 Offres
 ======
 
-Cette page utilise les fichier (snippet) *redirect-user* et *liste-gestion-offre-emploi* qui reprends le code du fichier liste-offres-emploi
+Cette page utilise les fichiers (snippet) *redirect-user* et *liste-gestion-offre-emploi* qui reprends le code du fichier liste-offres-emploi
 et un **pod template** offre emploie.
 La page fait appel aussi à *supprimer-offre*.
 
@@ -40,6 +40,6 @@ Supprimer offre
 ===============
 
 Pour supprimer une offre on vérifie qu'un id à été transmis avec le *$_GET*.
-Ensuite on fais appel à la requête **suprimerOffre** prenant pour parametre le *$id* récupéré avec le get.
+Ensuite on fait appel à la requête **suprimerOffre** prenant pour parametre le *$id* récupéré avec le get.
 
 Pour la suite de la suppression on utilise un *$_GET* pour récupérer l'url et on supprime le fichier associer si il existe.

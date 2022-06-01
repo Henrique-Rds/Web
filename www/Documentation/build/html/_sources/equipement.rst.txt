@@ -11,14 +11,14 @@ Composition de la page
 Page Equipements
 ----------------
 
-Si nous observons les widget qui composent cette page nous pouvons observer qu'il y a deux widget des **Insert Snippet** faisant appel à **redirect-admin-user** ainsi qu'a **liste-equipement** .
+Si nous observons les widgets qui composent cette page nous pouvons observer qu'il y a deux widget des **Insert Snippet** faisant appel à **redirect-admin-user** ainsi qu'a **liste-equipement** .
 De plus on peut voir un widget **Pod** faisant appel à moyen.
 
 Supprimer un moyen
 ==================
 
 Pour supprimer un moyen on vérifie qu'un id à été transmis avec le *$_GET*.
-Ensuite on fais appel à la requête **suprimerMoyen** prenant pour parametre le *$id* récupéré avec le get.
+Ensuite on fait appel à la requête **suprimerMoyen** prenant pour parametre le *$id* récupéré avec le get.
 
 Pour la suite de la suppression on utilise un *$_GET* pour récupérer l'url et on supprime le fichier associer si il existe.
 

@@ -5,10 +5,10 @@ Theses
 Composition de la page
 ======================
 
-Si nous observons les widget qui composent cette page nous pouvons observer qu'il y a quatre widget **SiteOrigin Editeur**, 
+Si nous observons les widget qui composent cette page nous pouvons observer qu'il y a quatre widgets **SiteOrigin Editeur**, 
 ils permettent d'ajouter du texte ainsi que des liens *(voir plus)* .
 
-Parmis ces widget nous pouvons retrouver des **Insert Snippet** faisant appel aux deux pages décritent dans cette documentation.
+Parmis ces widgets nous pouvons retrouver des **Insert Snippet** faisant appel aux deux pages décritent dans cette documentation.
 De plus on peut aussi trouver quatre boutons permettant de télécharger les différents livrets disponibles.
 
 Enfin un widget pod est appelé deux fois dans la page, le pod appelé est *theses*.

@@ -38,6 +38,6 @@ Enfin la dernière partie du code est basée sur le bouton accepter et refuser
 Démarches à suivre
 ==================
 
-Cette n'appelle aucun snippet et affiche uniquement du texte ainsi que des liens. Vous pouvez les retrouver directement
+Cette page n'appelle aucun snippet et affiche uniquement du texte ainsi que des liens. Vous pouvez les retrouver directement
 sur le gestionnaire WordPress.
 

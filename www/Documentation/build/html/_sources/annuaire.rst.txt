@@ -15,7 +15,7 @@ Le tableau représentant l'annuaire est trié par nom de famille :
 
 **statusToString** est une fonction que l'on retrouve dans la page annuaire_fonctions que nous définirons après.
 
-On vérifie si le statut de l'utilisateur n'est pas professeur et on va echo *HDR* devant son status si c'est le cas.
+On vérifie si le statut de l'utilisateur n'est pas professeur et on affichera *HDR* avec "echo HDR" devant son status si c'est le cas.
 Enfin on effectue une vérification des groupes des utilisateurs pour echo *AXTR* et on echo l'établissement de rattachement de l'utilisateur.
 
 

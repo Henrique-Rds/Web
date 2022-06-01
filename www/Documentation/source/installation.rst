@@ -65,8 +65,7 @@ Si on se connecte au site ICA Prod on retrouve :
 
 .. image:: images/ChoixWWWFTP.png
 
-Pour acceder aux dossiers il faut choisir **ica.cnrs.fr** ensuite **www** et enfin vous pouvez retrouver tous les fichiers les
-du site ICA .
+Pour acceder aux dossiers il faut choisir **ica.cnrs.fr** ensuite **www** et enfin vous pouvez retrouver tous les fichiers du site ICA .
 
 .. image:: images/FichiersFTP.png
 
