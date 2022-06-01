@@ -328,7 +328,6 @@ Sinon s’il y a un moyen dans le GET et il est différent de null alors :
 
         Si l’utilisateur dans le GET n’est pas null alors :
             On appelle **getEventsByMoyenAndUser** de **Events.php** avec le moyen dans le GET ainsi que les deux dates et on récupère le résultat et on met le nom d’utilisateur dans la SESSION.
-                
                 Sinon :	
                     On met l’utilisateur dans la SESSION a null.
 
@@ -343,3 +342,91 @@ S’il n’y a pas de résultat dans la requête alors on affiche un message pou
 
 Sinon On affiche la requête dans un tableau.
 Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.
+
+Get Utilisateur
+===============
+
+Ce fichier permet de changer la liste déroulant des utilisateurs en fonction des réservations du tableau.
+Ce fichier est utilisé dans la page ‘Tableau des réservation’ grâce au Javascript.
+
+Ce fichier import *Events.php* qui va permettre d’envoyer les requêtes. 
+On récupère les GET de la date de début et de fin (sachant que par défaut date de début et la date du jour et la date de fin 1er janvier 3000).
+
+Si la catégorie dans le GET existe alors : 
+	On le récupère et on le met dans la SESSION. 
+
+    On appelle **getUtiEventsByCategorie** de *Events.php* avec la catégorie dans le GET.
+        On appelle *getMoyenParCategorie* de *Events.php* avec la catégorie dans le GET et on parcourt on parcourt tous les résultats de la requête et si le moyen d’un des résultats est égal au moyen dans la SESSION alors :
+        On appelle *getUtiEventsByMoyen* de *Events.php* avec le moyen dans la SESSION.
+
+    Sinon :
+        On prend le GET du moyen et on le met dans la SESSION.
+            S’il n’est pas null alors : 
+                On appelle **getUtiEventsByMoyen** de *Events.php* avec le GET du moyen.
+            Sinon :
+                On appelle **getUtiEventsByMoyen** de *Events.php* avec la catégorie dans la SESSION.
+
+Via les résultats de la requête gardée on met tous dans le menu déroulent de l’utilisateur. 
+Si l’utilisateur dans la SESSION est égal à un des résultats de la requête alors on le sélectionne dans le menu.
+
+Mes Reservations
+================
+
+Ce fichier permet d’afficher les réservations de l’utilisateur qu’il soit encadrant, responsable du moyen réservé ou l’utilisateur qui réserve.
+Ce fichier est utilisé dans la page ‘Mes réservations’.
+
+Ce fichier import *Events.php* qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+
+On initialise la date de début avec la date courante et la date de fin avec 3000-01-01.
+On récupère le nom de l’utilisateur connecté.
+On appelle **getEventsByName** de *Events.php* avec le nom de l’utilisateur connecté, la date de début et la date de fin. 
+
+Le formulaire est constitué de deux inputs de type date pour filtrer les réservations selon la date de début et de fin.
+
+Si le résultat de la requête **getEventsByName** est null alors on affiche un message. 
+Sinon on affiche les résultats dans un tableau.
+Le lien ‘consulter’ permet d’accéder à la page réservations.
+
+Modifier Reservation
+====================
+
+Ce fichier est le formulaire de modification d’une réservation ainsi que sa modification dans la bdd et la vérification des exceptions.
+Ce fichier est utilisé dans la page ‘Modifier une réservation’.
+
+Ce fichier import *NouvelleReservation.php* qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+
+S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la page calendrier des réservations.
+On appelle **GetEventById** de *NouvelleReservation.php* avec l’id dans le GET pour récupérer la réservation à modifier. 
+On appelle **separeDateEtHeure** de *NouvelleReservation.php* avec la date de la réservation pour séparer les heures avec les dates.
+
+L’utilisateur via le formulaire va écrire toutes les informations qu’il veut mettre sauf nom d’utilisateur qui est récupéré via le nom de l’utilisateur courant et encadrant s’il n’est pas doctorant.
+
+Pour chaque rubrique du formulaire on affiche le résultat de la requête **GetEventById** s’il contient des choses sinon on n’affiche rien.
+Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.
+
+Le menu déroulant Moyen appelle **afficherLesCategorie** et **getMoyenParCategorie **de *NouvelleReservation.php* pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.
+
+Le menu déroulant Encadrant appelle **afficehrLesEncadrant** de *NouvelleReservation.php* pour afficher tous les encadrants possibles.
+
+Pour vérifier les exceptions le fichier appelle **chevauchementMemeMoyenIdDifferent** , **chevauchementMemeUtilisateurIdDifferent** , **chevauchement2jours** , **chevauchement2heures** de *NouvelleReservation.php* si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via **envoieMailModif** de *NouvelleReservation.php* et on crée la réservation via **modifierReservation** de *NouvelleReservation.php* et on envoie un message de succès.
+
+
+Supprimer Reservation
+=====================
+
+Ce fichier permet de supprimer une réservation
+Ce fichier est utilisé dans la page ‘Supprimer une réservation’.
+
+Ce fichier import *Events.php* qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la page ‘Calendrier des réservations’.
+
+On appelle **deleteEventById** de *Events.php* avec l’id dans le GET et on le renvoie dans la page ‘Calendrier des réservations’.
+
+
+Tableau des Reservations
+========================
+
+Voir Reservation
+================
+

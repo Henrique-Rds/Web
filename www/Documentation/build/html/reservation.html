@@ -75,6 +75,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#get-mon-tableau">Get Mon Tableau</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-moyen">Get Moyen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-tableau">Get Tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-utilisateur">Get Utilisateur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mes-reservations">Mes Reservations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modifier-reservation">Modifier Reservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supprimer-reservation">Supprimer Reservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tableau-des-reservations">Tableau des Reservations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voir-reservation">Voir Reservation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
@@ -363,15 +369,13 @@ S’il y a un utilisateur dans le GET alors :</p>
 <dt>Sinon s’il y a un moyen dans le GET et il est différent de null alors :</dt><dd><p>On met le moyen dans le GET dans la SESSION et on appelle getEventsByMoyen de <strong>Events.php</strong> avec le moyen dans le GET ainsi que les deux dates.
 S’il y a un utilisateur dans le GET alors :</p>
 <blockquote>
-<div><dl>
-<dt>Si l’utilisateur dans le GET n’est pas null alors :</dt><dd><p>On appelle <strong>getEventsByMoyenAndUser</strong> de <strong>Events.php</strong> avec le moyen dans le GET ainsi que les deux dates et on récupère le résultat et on met le nom d’utilisateur dans la SESSION.</p>
-<blockquote>
 <div><dl class="simple">
+<dt>Si l’utilisateur dans le GET n’est pas null alors :</dt><dd><dl class="simple">
+<dt>On appelle <strong>getEventsByMoyenAndUser</strong> de <strong>Events.php</strong> avec le moyen dans le GET ainsi que les deux dates et on récupère le résultat et on met le nom d’utilisateur dans la SESSION.</dt><dd><dl class="simple">
 <dt>Sinon :</dt><dd><p>On met l’utilisateur dans la SESSION a null.</p>
 </dd>
 </dl>
-</div></blockquote>
-<dl class="simple">
+</dd>
 <dt>Sinon :</dt><dd><dl class="simple">
 <dt>On appelle getUtiEventsByMoyen avec le moyen dans le GET ainsi que les deux dates et on parcourt tous les résultats de la requête et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors :</dt><dd><p>On appelle getEventsByMoyenAndUser avec le moyen dans le GET et nom d’utilisateur dans la SESSION ainsi que les deux dates.</p>
 </dd>
@@ -388,6 +392,79 @@ S’il y a un utilisateur dans le GET alors :</p>
 <p>S’il n’y a pas de résultat dans la requête alors on affiche un message pour dire qu’il n’y a pas de réservation.</p>
 <p>Sinon On affiche la requête dans un tableau.
 Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
+</div>
+<div class="section" id="get-utilisateur">
+<h2>Get Utilisateur<a class="headerlink" href="#get-utilisateur" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet de changer la liste déroulant des utilisateurs en fonction des réservations du tableau.
+Ce fichier est utilisé dans la page ‘Tableau des réservation’ grâce au Javascript.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes.
+On récupère les GET de la date de début et de fin (sachant que par défaut date de début et la date du jour et la date de fin 1er janvier 3000).</p>
+<dl>
+<dt>Si la catégorie dans le GET existe alors :</dt><dd><blockquote>
+<div><p>On le récupère et on le met dans la SESSION.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>On appelle <strong>getUtiEventsByCategorie</strong> de <em>Events.php</em> avec la catégorie dans le GET.</dt><dd><p>On appelle <em>getMoyenParCategorie</em> de <em>Events.php</em> avec la catégorie dans le GET et on parcourt on parcourt tous les résultats de la requête et si le moyen d’un des résultats est égal au moyen dans la SESSION alors :
+On appelle <em>getUtiEventsByMoyen</em> de <em>Events.php</em> avec le moyen dans la SESSION.</p>
+</dd>
+<dt>Sinon :</dt><dd><dl class="simple">
+<dt>On prend le GET du moyen et on le met dans la SESSION.</dt><dd><dl class="simple">
+<dt>S’il n’est pas null alors :</dt><dd><p>On appelle <strong>getUtiEventsByMoyen</strong> de <em>Events.php</em> avec le GET du moyen.</p>
+</dd>
+<dt>Sinon :</dt><dd><p>On appelle <strong>getUtiEventsByMoyen</strong> de <em>Events.php</em> avec la catégorie dans la SESSION.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Via les résultats de la requête gardée on met tous dans le menu déroulent de l’utilisateur.
+Si l’utilisateur dans la SESSION est égal à un des résultats de la requête alors on le sélectionne dans le menu.</p>
+</div>
+<div class="section" id="mes-reservations">
+<h2>Mes Reservations<a class="headerlink" href="#mes-reservations" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’afficher les réservations de l’utilisateur qu’il soit encadrant, responsable du moyen réservé ou l’utilisateur qui réserve.
+Ce fichier est utilisé dans la page ‘Mes réservations’.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<p>On initialise la date de début avec la date courante et la date de fin avec 3000-01-01.
+On récupère le nom de l’utilisateur connecté.
+On appelle <strong>getEventsByName</strong> de <em>Events.php</em> avec le nom de l’utilisateur connecté, la date de début et la date de fin.</p>
+<p>Le formulaire est constitué de deux inputs de type date pour filtrer les réservations selon la date de début et de fin.</p>
+<p>Si le résultat de la requête <strong>getEventsByName</strong> est null alors on affiche un message.
+Sinon on affiche les résultats dans un tableau.
+Le lien ‘consulter’ permet d’accéder à la page réservations.</p>
+</div>
+<div class="section" id="modifier-reservation">
+<h2>Modifier Reservation<a class="headerlink" href="#modifier-reservation" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier est le formulaire de modification d’une réservation ainsi que sa modification dans la bdd et la vérification des exceptions.
+Ce fichier est utilisé dans la page ‘Modifier une réservation’.</p>
+<p>Ce fichier import <em>NouvelleReservation.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<p>S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la page calendrier des réservations.
+On appelle <strong>GetEventById</strong> de <em>NouvelleReservation.php</em> avec l’id dans le GET pour récupérer la réservation à modifier.
+On appelle <strong>separeDateEtHeure</strong> de <em>NouvelleReservation.php</em> avec la date de la réservation pour séparer les heures avec les dates.</p>
+<p>L’utilisateur via le formulaire va écrire toutes les informations qu’il veut mettre sauf nom d’utilisateur qui est récupéré via le nom de l’utilisateur courant et encadrant s’il n’est pas doctorant.</p>
+<p>Pour chaque rubrique du formulaire on affiche le résultat de la requête <strong>GetEventById</strong> s’il contient des choses sinon on n’affiche rien.
+Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.</p>
+<p>Le menu déroulant Moyen appelle <strong>afficherLesCategorie</strong> et <a href="#id1"><span class="problematic" id="id2">**</span></a>getMoyenParCategorie <a href="#id3"><span class="problematic" id="id4">**</span></a>de <em>NouvelleReservation.php</em> pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.</p>
+<p>Le menu déroulant Encadrant appelle <strong>afficehrLesEncadrant</strong> de <em>NouvelleReservation.php</em> pour afficher tous les encadrants possibles.</p>
+<p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyenIdDifferent</strong> , <strong>chevauchementMemeUtilisateurIdDifferent</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via <strong>envoieMailModif</strong> de <em>NouvelleReservation.php</em> et on crée la réservation via <strong>modifierReservation</strong> de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
+</div>
+<div class="section" id="supprimer-reservation">
+<h2>Supprimer Reservation<a class="headerlink" href="#supprimer-reservation" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet de supprimer une réservation
+Ce fichier est utilisé dans la page ‘Supprimer une réservation’.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la page ‘Calendrier des réservations’.</p>
+<p>On appelle <strong>deleteEventById</strong> de <em>Events.php</em> avec l’id dans le GET et on le renvoie dans la page ‘Calendrier des réservations’.</p>
+</div>
+<div class="section" id="tableau-des-reservations">
+<h2>Tableau des Reservations<a class="headerlink" href="#tableau-des-reservations" title="Lien permanent vers ce titre"></a></h2>
+</div>
+<div class="section" id="voir-reservation">
+<h2>Voir Reservation<a class="headerlink" href="#voir-reservation" title="Lien permanent vers ce titre"></a></h2>
 </div>
 </div>
 
