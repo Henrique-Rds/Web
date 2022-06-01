@@ -10,8 +10,11 @@ Events
 ======
 
 Ce fichier permet de récupérer les événements (réservations) en fonction de différentes options.
-Ce fichier est utilisé dans *afficherjournee.php*, *calendrier.php*, *getCalendrier.php*, *getTableau.php*, *GetMoyen.php*, *mesReservation.php*, *supprimerReservation.php*, *tableauReservation.php* et *voirReservation.php*.
+Ce fichier est utilisé dans *afficherjournee.php* , *calendrier.php* , *getCalendrier.php* , *getTableau.php* , *GetMoyen.php* , *mesReservation.php* , *supprimerReservation.php* , *tableauReservation.php* et *voirReservation.php* .
 Ce fichier import *GestionBdd.php* qui va permettre d’envoyer les requêtes.
+
+Les fonctions
+-------------
 
 **getEventsBetween** : Récupère les évènements qui sont entre deux dates.
 
@@ -65,5 +68,39 @@ Il appelle la fonction getCategorie contenu dans GestionBdd.php renvoie le résu
 **getUtiEventsByMoyen** :Cherche tous les utilisateurs qui ont réservés le moyen donné.
 Il appelle la fonction getUtiReservationParMoyen contenu dans GestionBdd.php renvoie le résultat.
 
-**getUtiEventsByCategorie**:Cherche tous les utilisateurs qui ont réservé un moyen de la catégorie donné. 
+**getUtiEventsByCategorie** :Cherche tous les utilisateurs qui ont réservé un moyen de la catégorie donné. 
 Il appelle la fonction getUtiReservationParCatégorie contenu dans GestionBdd.php renvoie le résultat.
+
+Month
+=====
+
+Ce fichier permet de récupérer le mois, de connaitre son nombre de semaines et de jours.
+Ce fichier est utilisé dans *calendrier.php* .
+Ce fichier import lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+Cette classe à 4 attributs.
+
+- *$days* qui corresponds au jours de la semaine. 
+- *$months* représente les mois de l’année.
+- *$month* le mois sélectionner.
+- *$year* l’année sélectionner.
+
+**Constructeur** : à en paramètre le numéro du mois et l’année pour déterminer le nombre de jour dans le mois.
+
+**getDays** : récupère *$days*.
+
+**getMonth** : récupère *$month*.
+
+**getYear** : récupère *$year*.
+
+**getStartDay** : retourne le premier jour du mois .
+
+**toString** : retourne le mois et l’année sous forme de chaine de caractère. 
+
+**getWeeks** : retourne le nombre de semaine. 
+
+**withinMouth** : récupère les jours qui ne sont pas dans le mois mais dans les même semaine que le premier jour et le dernière jour du mois.
+
+**nextMonth** : passe au mois suivant $month prend +1 et si $month = 12 alors il retourne à 1.
+
+**previousMonth** : passe au mois précédent $month prend -1 et si $month = 1 alors il retourne à 12.
+

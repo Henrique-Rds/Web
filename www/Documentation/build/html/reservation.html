@@ -59,7 +59,11 @@
 <li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Réservations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-fonctions">Les fonctions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#month">Month</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
@@ -103,8 +107,10 @@ retrouver plus facilement les informations qui vous sont nécéssaires.</p>
 <div class="section" id="events">
 <h2>Events<a class="headerlink" href="#events" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de récupérer les événements (réservations) en fonction de différentes options.
-Ce fichier est utilisé dans <em>afficherjournee.php</em>, <em>calendrier.php</em>, <em>getCalendrier.php</em>, <em>getTableau.php</em>, <em>GetMoyen.php</em>, <em>mesReservation.php</em>, <em>supprimerReservation.php</em>, <em>tableauReservation.php</em> et <em>voirReservation.php</em>.
+Ce fichier est utilisé dans <em>afficherjournee.php</em> , <em>calendrier.php</em> , <em>getCalendrier.php</em> , <em>getTableau.php</em> , <em>GetMoyen.php</em> , <em>mesReservation.php</em> , <em>supprimerReservation.php</em> , <em>tableauReservation.php</em> et <em>voirReservation.php</em> .
 Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requêtes.</p>
+<div class="section" id="les-fonctions">
+<h3>Les fonctions<a class="headerlink" href="#les-fonctions" title="Lien permanent vers ce titre"></a></h3>
 <p><strong>getEventsBetween</strong> : Récupère les évènements qui sont entre deux dates.</p>
 <p><strong>getEventsBetweenByDay</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour.
 Il appelle la fonction getEventsBetween contenu dans Events.php.
@@ -140,8 +146,32 @@ Il appelle la fonction getReservationParMoyenEtUtilisateur contenu dans GestionB
 Il appelle la fonction getCategorie contenu dans GestionBdd.php renvoie le résultat.</p>
 <p><strong>getUtiEventsByMoyen</strong> :Cherche tous les utilisateurs qui ont réservés le moyen donné.
 Il appelle la fonction getUtiReservationParMoyen contenu dans GestionBdd.php renvoie le résultat.</p>
-<p><strong>getUtiEventsByCategorie</strong>:Cherche tous les utilisateurs qui ont réservé un moyen de la catégorie donné.
+<p><strong>getUtiEventsByCategorie</strong> :Cherche tous les utilisateurs qui ont réservé un moyen de la catégorie donné.
 Il appelle la fonction getUtiReservationParCatégorie contenu dans GestionBdd.php renvoie le résultat.</p>
+</div>
+</div>
+<div class="section" id="month">
+<h2>Month<a class="headerlink" href="#month" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet de récupérer le mois, de connaitre son nombre de semaines et de jours.
+Ce fichier est utilisé dans <em>calendrier.php</em> .
+Ce fichier import lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
+Cette classe à 4 attributs.</p>
+<ul class="simple">
+<li><p><em>$days</em> qui corresponds au jours de la semaine.</p></li>
+<li><p><em>$months</em> représente les mois de l’année.</p></li>
+<li><p><em>$month</em> le mois sélectionner.</p></li>
+<li><p><em>$year</em> l’année sélectionner.</p></li>
+</ul>
+<p><strong>Constructeur</strong> : à en paramètre le numéro du mois et l’année pour déterminer le nombre de jour dans le mois.</p>
+<p><strong>getDays</strong> : récupère <em>$days</em>.</p>
+<p><strong>getMonth</strong> : récupère <em>$month</em>.</p>
+<p><strong>getYear</strong> : récupère <em>$year</em>.</p>
+<p><strong>getStartDay</strong> : retourne le premier jour du mois .</p>
+<p><strong>toString</strong> : retourne le mois et l’année sous forme de chaine de caractère.</p>
+<p><strong>getWeeks</strong> : retourne le nombre de semaine.</p>
+<p><strong>withinMouth</strong> : récupère les jours qui ne sont pas dans le mois mais dans les même semaine que le premier jour et le dernière jour du mois.</p>
+<p><strong>nextMonth</strong> : passe au mois suivant $month prend +1 et si $month = 12 alors il retourne à 1.</p>
+<p><strong>previousMonth</strong> : passe au mois précédent $month prend -1 et si $month = 1 alors il retourne à 12.</p>
 </div>
 </div>
 
