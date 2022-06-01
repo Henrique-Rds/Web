@@ -14,6 +14,10 @@ Il faudra ensuite différents logiciels que je vais vous présenter ci-dessous.
 
     Il n'y a pas d'ordre pour l'installation des logiciels. L'ordre pour le lancement sera donné dans les explications.
 
+.. important::
+    Les différents identifiants : *utilisateur* et *mot de passe* ne seront pas donnés pour éviter que l'acces soit public et car il
+    est possible que les identifiants changent.
+
 FileZilla
 =========
 
@@ -43,8 +47,8 @@ ICA Prod :
 - Protocole : SFTP
 - Hôte : 195.220.198.90
 - Port : 50028
-- Utilisateur : lab0612
-- Mot de Passe : 53vw4KZxq4HF
+- Utilisateur : **Demander à un responsable**
+- Mot de Passe : **Demander à un responsable**
 
 ICA Préprod :
 -------------
@@ -52,8 +56,8 @@ ICA Préprod :
 - Protocole : SFTP
 - Hôte : 195.220.198.90
 - Port : 50025
-- Utilisateur : lab0611
-- Mot de Passe : R4uaGV1S2sp8
+- Utilisateur : **Demander à un responsable**
+- Mot de Passe : **Demander à un responsable**
 
 
 Une fois ajouté vous pouvez vous connecter au serveur et vous retrouverez les fichiers du site.
@@ -81,12 +85,12 @@ ICA Prod :
 ----------
 
 - Lien vers la page PhpMyAdmin : `PhpMyAdmin Prod <https://laboffice.lamp.core-clouds.fr/phpMyAdmin/>`__
-- Utilisateur : lab0612sql3
-- Mot de passe : XY02b21aBLaq
+- Utilisateur : **Demander à un responsable**
+- Mot de passe : **Demander à un responsable**
 
 ICA PréProd :
 -------------
 
 - Lien vers la page PhpMyAdmin : `PhpMyAdmin Prod <https://laboffice.lamp.core-clouds.fr/phpMyAdmin/>`__
-- Utilisateur : lab0611sql3
-- Mot de passe : 1pm6STt9TE0n
+- Utilisateur : **Demander à un responsable**
+- Mot de passe : **Demander à un responsable**
