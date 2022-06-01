@@ -19,5 +19,19 @@ les documents en format excel. Les derniers widgets du gestionnaire affichent du
 Ajout nouvelle Theses
 =====================
 
+
+
 Affichage des doctorants
 ========================
+
+Pour afficher les doctorants nous allons voir le snippet *10doctorants-theses*.
+
+Le début du code fait appel à trois requetes permettant la suppression d'un doctorant. Les trois requetes
+sont :
+
+- **supprimerDoctorantTableUser**
+- **supprimerDoctorantTableUserMeta**
+- **supprimerDoctorantTablePodsrel**
+
+Ensuite le reste du code présente le tableau, dans les <td> on peut retrouver les différentes parties des lignes : texte, variables , formulaire ...
+
