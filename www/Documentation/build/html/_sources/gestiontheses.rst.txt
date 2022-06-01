@@ -19,6 +19,8 @@ les documents en format excel. Les derniers widgets du gestionnaire affichent du
 Ajout nouvelle Theses
 =====================
 
+Pour ajouter un nouvelle these nous faisons appel au **pod Formulaire** These qui crée le formulaire avec les différents champ :
+doctorant, titre_these, nom_doct, prenom_doct, directeur_int, encadrant_int1, encadrant_int2, encadrants_ext, ecole_doctorale, date_debut, fin_previsionnelle
 
 
 Affichage des doctorants
