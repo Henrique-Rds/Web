@@ -58,9 +58,16 @@
 <li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fichiers Intranet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fichiers Intranet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#annuaire-gestionnaire">Annuaire gestionnaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mailing">Mailing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supprimer-projet">supprimer projet</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -89,6 +96,32 @@
              
   <div class="section" id="fichiers-intranet">
 <h1>Fichiers Intranet<a class="headerlink" href="#fichiers-intranet" title="Lien permanent vers ce titre"></a></h1>
+<div class="section" id="annuaire-gestionnaire">
+<h2>Annuaire gestionnaire<a class="headerlink" href="#annuaire-gestionnaire" title="Lien permanent vers ce titre"></a></h2>
+<p>Au début du code de notre snippet on peut retrouver la gestion des membres.
+Les membres peuvent être cachés en utilisant la requete <strong>cacherMembre</strong>, on peut aussi
+retablir les membres cachés précédement avec la requete  <strong>retablirMembre1</strong>
+Ensuite on retrouve les requetes permettant la suppression :</p>
+<ul class="simple">
+<li><p><strong>supprimerDoctorantTableUser</strong></p></li>
+<li><p><strong>supprimerDoctorantTableUserMeta</strong></p></li>
+<li><p><strong>supprimerDoctorantTablePodsrel</strong></p></li>
+</ul>
+<p>Dans la suite du code nous retrouvons la création du tableau pour la gestion de l’annuaire. Celui-ci ressemble au tableau
+de la page d’annuaire publique. La différence se trouve dans l’apparition des boutons des 3 forms : Cacher, Supprimer, Rétablir.</p>
+</div>
+<div class="section" id="mailing">
+<h2>Mailing<a class="headerlink" href="#mailing" title="Lien permanent vers ce titre"></a></h2>
+<p>Le snippet mailing contient un très grand form, celui-ci contient différents group option  contenant eux meme de nombreuses options.
+A la fin de la partie contenant les options nous pouvons retrouver le champ permettant la recherche.
+On y récupère avec le POST le nombre qui sera attribué à la variable <em>$nb</em> .
+Ensuite on retrouve le fonctionnement du submit permettant l’envoie des données. Celui-ci permet de rechercher par éléments précisés par l’utilisateur la liste.</p>
+</div>
+<div class="section" id="supprimer-projet">
+<h2>supprimer projet<a class="headerlink" href="#supprimer-projet" title="Lien permanent vers ce titre"></a></h2>
+<p>Pour supprimer un projet on vérifie qu’un id à été transmis avec le <em>$_POST</em>.
+Ensuite on fais appel à la requête <strong>suprimerProjet1</strong> prenant pour parametre le <em>$id</em> récupéré avec le post.</p>
+</div>
 </div>
 
 
