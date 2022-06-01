@@ -65,6 +65,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#month">Month</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nouvelle-reservation">Nouvelle Réservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#afficher-journee">Afficher Journée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ajouter-reservation">Ajouter Reservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calendrier">Calendrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-calendrier">Get Calendrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-mon-tableau">Get Mon Tableau</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
@@ -226,14 +231,75 @@ Appel la fonction <strong>verificationChevauchementMemeUtilisateurIdDifferent</s
 Récupère toutes les infos de la réservation.
 Appel la fonction <strong>getResponsableParMoyen</strong> de <em>GestionBdd.php</em>.
 Appel la fonction <strong>RechercheMailResponsable</strong> de <em>GestionBdd.php</em>.
-Envoie le mail au différent responsable récupérer via RechercheMailResponsable.</p>
+Envoie le mail au différent responsable récupérer via <strong>RechercheMailResponsable</strong>.</p>
 <p><strong>afficherLesCategorie</strong> :Cherche toutes les catégorie.
 Il appelle la fonction <strong>getCategorie</strong> contenu dans <em>GestionBdd.php</em> renvoie le résultat.</p>
 <p><strong>envoieMailModif</strong> : Envoie un mail au responsable pour chaque modification d’une réservation.
 Récupère toutes les infos de la réservation.
 Appel la fonction <strong>getResponsableParMoyen</strong> de <em>GestionBdd.php</em>.
 Appel la fonction <strong>rechercheMailResponsable</strong> de <em>GestionBdd.php</em>.
-Envoie le mail au différent responsable récupérer via RechercheMailResponsable.</p>
+Envoie le mail au différent responsable récupérer via <strong>RechercheMailResponsable</strong>.</p>
+</div>
+<div class="section" id="afficher-journee">
+<h2>Afficher Journée<a class="headerlink" href="#afficher-journee" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’afficher les réservations de la journée en fonction de la categorie ou du moyen mis dans la session.
+Ce fichier est utilisé dans la page ‘Réservation d’une journée’.
+Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<p>S’il n’y a pas de GET alors le fichier renvoie l’utilisateur sur la page ‘Calendrier des réservation’.
+On récupère la date et on appelle la fonction <strong>getEventByDayAndCateogire</strong> de <em>Events.php</em> avec la catégorie dans la session et la date.
+On appelle la fonction <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie dans la session.
+Si le moyen dans la SESSION est dans la catégorie dans la session alors on appelle <strong>getEventByDayAndMoyen</strong> sinon on garde le résultat de <strong>getEventByDayAndCateogire</strong>.
+On affiche la requête garder dans un tableau.
+Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
+</div>
+<div class="section" id="ajouter-reservation">
+<h2>Ajouter Reservation<a class="headerlink" href="#ajouter-reservation" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier est le formulaire de la création d’une réservation ainsi que son ajout dans la bdd et la vérification des exceptions.
+Ce fichier est utilisé dans la page ‘Ajouter une réservation’.</p>
+<p>Ce fichier import <em>NouvelleReservation.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<p>L’utilisateur via le formulaire va écrire toutes les informations qu’il veut mettre sauf nom d’utilisateur qui est récupéré via le nom de l’utilisateur courant et encadrant s’il n’est pas doctorant.
+Pour chaque rubrique du formulaire on vérifie si le $_POST contient le résultat pour pouvoir l’afficher sinon on n’affiche rien.</p>
+<p>Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.</p>
+<p>Le menu déroulant Moyen appelle <strong>afficherLesCategorie</strong> et <strong>getMoyenParCategorie</strong> de <em>NouvelleReservation.php</em> pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.</p>
+<p>Le menu déroulant Encadrant appelle <strong>afficehrLesEncadrant</strong> de <em>NouvelleReservation.php</em> pour afficher tous les encadrants possibles.</p>
+<p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyen</strong> , <strong>chevauchementMemeUtilisateur</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via envoieMailAjout de <em>NouvelleReservation.php</em> et on crée la réservation via creationReservation de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
+</div>
+<div class="section" id="calendrier">
+<h2>Calendrier<a class="headerlink" href="#calendrier" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier d’afficher les réservations sous forme de calendrier, il permet aussi de filtrer les réservations avec les catégories ou directement le moyen.
+Ce fichier est utilisé dans la page ‘Calendrier des réservations’.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes, <em>Month.php</em> qui va permettre de voir le mois du calendrier et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<p>On crée le Month avec comme mois par defaut le mois actuel et on récupère toutes informations du mois via <strong>getStartDay</strong> , <strong>GetWeeks</strong> de <em>Month.php</em> .
+Si le POST existe alors on récupère la catégorie et on le met dans la SESSION.
+Si le POST contient un moyen alors on le récupère et on le met dans la SESSION.
+Sinon on récupère les informations par la SESSION.</p>
+<p>On récupère la date et on appelle la fonction <strong>getEventsBetweenByDay</strong> de Events.php avec la catégorie récupérer.</p>
+<p>On appelle la fonction <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie récupérée.
+Si le moyen est dans la catégorie alors on appelle <strong>getEventsBetweenByDay**ByMoyen sinon on garde le résultat de **getEventsBetweenByDay</strong>.</p>
+<p>On affiche le mois et l’année grâce au toString de <em>Month.php</em>.</p>
+<p>Le formulaire est constitué de deux menus déroulants l’un les catégories affichées via <strong>afficherLesCatégorie</strong> de <em>Events.php</em> et le moyen via <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie récupèrer.
+Les deux boutons avec des flèches permettent de passer aux mois précédents via <strong>previousMonth</strong> de <em>Month.php</em> et au mois suivant via <strong>nextMonth</strong> de <em>Month.php</em> .</p>
+<p>On affiche les résultats de la requête <strong>getEventsBetweenByDayByMoyen</strong> ou <strong>getEventsBetweenByDay</strong> dans le calendrier.
+On grise les jours qui ne sont pas dans le mois via <strong>withinMonth</strong> de <em>Month.php</em>.</p>
+</div>
+<div class="section" id="get-calendrier">
+<h2>Get Calendrier<a class="headerlink" href="#get-calendrier" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier permet d’actualiser le calendrier en fonction du filtre des menus déroulants.
+Ce fichier est utilisé dans la page ‘Calendrier des réservations’ grâce au Javascript.</p>
+<p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes, <em>Month.php</em> qui va permettre de voir le mois du calendrier et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
+<dl class="simple">
+<dt>S’il y a une catégorie dans le GET on appelle <strong>getEventsBetweenByDay</strong> de Events.php avec les deux dates ainsi que la catégorie dans le GET et on met la catégorie dans le GET dans la SESSION.</dt><dd><p>On appelle la fonction <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie dans le GET pour récupérer tous les moyens dans la catégorie.
+Si le moyen dans la SESSION est dans la catégorie alors on appelle <strong>getEventsBetweenByDayByMoyen</strong> et la requête sera affichée dans le tableau sinon on affiche le résultat de <strong>getEventsBetweenByDay</strong> de <em>Event.php</em> .</p>
+</dd>
+</dl>
+<p>Sinon si un moyen dans le GET et il n’est pas null on appelle <strong>getEventsBetweenByDayByMoyen</strong> de <em>Events.php</em> avec le moyen dans le GET et on met le moyen dans le GET dans la SESSION.</p>
+<p>Sinon on appelle <strong>getEventsBetweenByDay</strong> de <em>Events.php</em> avec la catégorie dans la SESSION.</p>
+<p>On affiche les résultats de la requête <strong>getEventsBetweenByDayByMoyen</strong> ou <strong>getEventsBetweenByDay</strong> dans le calendrier.
+On grise les jours qui ne sont pas dans le mois via <strong>withinMonth</strong> de <em>Month.php</em> .</p>
+</div>
+<div class="section" id="get-mon-tableau">
+<h2>Get Mon Tableau<a class="headerlink" href="#get-mon-tableau" title="Lien permanent vers ce titre"></a></h2>
 </div>
 </div>
 
