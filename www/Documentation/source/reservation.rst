@@ -13,8 +13,8 @@ Ce fichier permet de récupérer les événements (réservations) en fonction de
 Ce fichier est utilisé dans *afficherjournee.php* , *calendrier.php* , *getCalendrier.php* , *getTableau.php* , *GetMoyen.php* , *mesReservation.php* , *supprimerReservation.php* , *tableauReservation.php* et *voirReservation.php* .
 Ce fichier import *GestionBdd.php* qui va permettre d’envoyer les requêtes.
 
-Les fonctions
--------------
+Les fonctions Event
+-------------------
 
 **getEventsBetween** : Récupère les évènements qui sont entre deux dates.
 
@@ -83,6 +83,9 @@ Cette classe à 4 attributs.
 - *$months* représente les mois de l’année.
 - *$month* le mois sélectionner.
 - *$year* l’année sélectionner.
+
+Les fonctions Month
+-------------------
 
 **Constructeur** : à en paramètre le numéro du mois et l’année pour déterminer le nombre de jour dans le mois.
 
