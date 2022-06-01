@@ -473,4 +473,3 @@ On appelle **getResponsable** de *Events.php* avec le moyen de la réservation.
 
 On récupère le nom de l’utilisateur courant.
 Si l’utilisateur courant et l’utilisateur qui a réservé, l’encadrant ou un des responsables de la réservation alors on affiche les boutons modifier et supprimer qui renvoient à modifier une réservation et supprimer une réservation.
-
