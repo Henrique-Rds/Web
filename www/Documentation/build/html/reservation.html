@@ -471,10 +471,10 @@ On appelle <strong>getEventsByCategorie</strong> de <em>Events.php</em> avec la 
 On appelle <strong>getUtiEventsByCategorie</strong> de <em>Events.php</em> avec la catégorie et les deux dates.</p>
 <p>Si parmi les résultats de <strong>getUtiEventsByCategorie</strong> s’il y en a un qui est égal à l’utilisateur dans la SESSION alors on appelle <strong>getEventsByCategorieAndUser</strong> de <em>Events.php</em> avec la catégorie dans la SESSION ainsi que les deux dates.
 On appelle getMoyenParCategorie de <em>Events.php</em> avec la catégorie récupérée</p>
-<dl class="simple">
-<dt>Si parmi les résultats de <strong>getMoyenParCategorie</strong> s’il y en a un qui est égal au moyen dans la SESSION alors on appelle <strong>getEventsByMoyen</strong> de <em>Events.php</em> avec l’utilisateur dans la SESSION ainsi que les deux dates et on appelle <strong>getUtiEventsByMoyen</strong> avec le moyen dans la SESSION ainsi que les deux dates.</dt><dd><p>On parcourt tous les résultats de la requête <strong>getUtiEventsByMoyen</strong> et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors on appelle <strong>getEventsByMoyenAndUser</strong> de <em>Events.php</em> avec le moyen dans la session.</p>
-</dd>
-</dl>
+<p>Si parmi les résultats de <strong>getMoyenParCategorie</strong> s’il y en a un qui est égal au moyen dans la SESSION alors on appelle <strong>getEventsByMoyen</strong> de <em>Events.php</em> avec l’utilisateur dans la SESSION ainsi que les deux dates et on appelle <strong>getUtiEventsByMoyen</strong> avec le moyen dans la SESSION ainsi que les deux dates.</p>
+<blockquote>
+<div><p>On parcourt tous les résultats de la requête <strong>getUtiEventsByMoyen</strong> et si l’utilisateur d’un des résultats est égal au nom d’utilisateur dans la SESSION alors on appelle <strong>getEventsByMoyenAndUser</strong> de <em>Events.php</em> avec le moyen dans la session.</p>
+</div></blockquote>
 <p>Le premier formulaire est constitué de deux menus déroulants l’un les catégories affichées via <strong>afficherLesCatégorie</strong> de <em>Events.php</em> et le moyen via <strong>getMoyenParCategorie</strong> de <em>Events.php</em> avec la catégorie récupèrer.</p>
 <p>Le deuxième formulaire est constitué de deux inputs de type date pour filtrer les réservations selon la date de début et de fin.</p>
 <p>Le troisième formulaire est constitué de 1 menu déroulant pour les utilisateurs avec une des requêtes <strong>getUti</strong> conservée.</p>
