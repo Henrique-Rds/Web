@@ -6,6 +6,10 @@ Réservations
     Nous allons voir ici la page la plus complexe de tout le site, il est conseillé d'utiliser une recherche navigateur (ctrl+f) pour
     retrouver plus facilement les informations qui vous sont nécéssaires.
 
+.. important::
+
+    la table réservation la rubrique axe_recherche a été remplacer par groupe suite à des amélioration dans le code
+
 Events
 ======
 
@@ -148,7 +152,10 @@ Appel la fonction **verificationChevauchementMemeUtilisateur** de *GestionBdd.ph
 Appel la fonction **getMoyensCategorie** de *GestionBdd.php* et la renvoie.
 
 **afficherLesEncadrant** : Recherche les encadrants possible.
-Appel la fonction getEncadrantPossible de *GestionBdd.php* et la renvoie.
+Appel la fonction **getEncadrantPossible** de *GestionBdd.php* et la renvoie.
+
+**afficherLesGroupes** : Recherche les groupes possibles . 
+Appel la fonction **getGroupePossible** de *GestionBdd.php* et la renvoie. 
 
 **getEventById** : Recherche une réservation en fonction de son Id.
 Appel la fonction getReservationById de *GestionBdd.php* et la renvoie.
@@ -201,6 +208,10 @@ Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.
 
 Ajouter Reservation
 ===================
+
+.. important::
+
+    le $POST[axe_recherche] a été remplacer par les groupes suite à des améliorations du code
 
 Ce fichier est le formulaire de la création d’une réservation ainsi que son ajout dans la bdd et la vérification des exceptions.
 Ce fichier est utilisé dans la page ‘Ajouter une réservation’.
@@ -389,6 +400,11 @@ Le lien ‘consulter’ permet d’accéder à la page réservations.
 
 Modifier Reservation
 ====================
+
+.. important::
+
+    le $POST[axe_recherche] a été remplacer par les groupes suite à des améliorations du code
+
 
 Ce fichier est le formulaire de modification d’une réservation ainsi que sa modification dans la bdd et la vérification des exceptions.
 Ce fichier est utilisé dans la page ‘Modifier une réservation’.
