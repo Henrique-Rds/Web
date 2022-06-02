@@ -121,6 +121,10 @@
 <p>Nous allons voir ici la page la plus complexe de tout le site, il est conseillé d’utiliser une recherche navigateur (ctrl+f) pour
 retrouver plus facilement les informations qui vous sont nécéssaires.</p>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>la table réservation la rubrique axe_recherche a été remplacer par groupe suite à des amélioration dans le code</p>
+</div>
 <div class="section" id="events">
 <h2>Events<a class="headerlink" href="#events" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de récupérer les événements (réservations) en fonction de différentes options.
@@ -224,7 +228,9 @@ Appel la fonction <strong>verificationChevauchementMemeUtilisateur</strong> de <
 <p><strong>getMoyenParCategorie</strong> : Recherche les moyens en fonction de leur catégorie.
 Appel la fonction <strong>getMoyensCategorie</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
 <p><strong>afficherLesEncadrant</strong> : Recherche les encadrants possible.
-Appel la fonction getEncadrantPossible de <em>GestionBdd.php</em> et la renvoie.</p>
+Appel la fonction <strong>getEncadrantPossible</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
+<p><strong>afficherLesGroupes</strong> : Recherche les groupes possibles .
+Appel la fonction <strong>getGroupePossible</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
 <p><strong>getEventById</strong> : Recherche une réservation en fonction de son Id.
 Appel la fonction getReservationById de <em>GestionBdd.php</em> et la renvoie.</p>
 <p><strong>modifierReservation</strong> : modifie la réservation dans la bdd.
@@ -268,6 +274,10 @@ Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</
 </div>
 <div class="section" id="ajouter-reservation">
 <h2>Ajouter Reservation<a class="headerlink" href="#ajouter-reservation" title="Lien permanent vers ce titre"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>le $POST[axe_recherche] a été remplacer par les groupes suite à des améliorations du code</p>
+</div>
 <p>Ce fichier est le formulaire de la création d’une réservation ainsi que son ajout dans la bdd et la vérification des exceptions.
 Ce fichier est utilisé dans la page ‘Ajouter une réservation’.</p>
 <p>Ce fichier import <em>NouvelleReservation.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
@@ -438,6 +448,10 @@ Le lien ‘consulter’ permet d’accéder à la page réservations.</p>
 </div>
 <div class="section" id="modifier-reservation">
 <h2>Modifier Reservation<a class="headerlink" href="#modifier-reservation" title="Lien permanent vers ce titre"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>le $POST[axe_recherche] a été remplacer par les groupes suite à des améliorations du code</p>
+</div>
 <p>Ce fichier est le formulaire de modification d’une réservation ainsi que sa modification dans la bdd et la vérification des exceptions.
 Ce fichier est utilisé dans la page ‘Modifier une réservation’.</p>
 <p>Ce fichier import <em>NouvelleReservation.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
