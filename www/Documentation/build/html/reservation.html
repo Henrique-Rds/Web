@@ -218,11 +218,6 @@ Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.
 Récupère la date de début et on ajoute 1 minute.
 Récupère la date de fin et on enlève 1 minute.
 Appel la fonction <strong>verificationChevauchementMemeMoyen</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
-<p>chevauchementMemeUtilisateur : vérifie si l’utilisateur de la réservation n’a pas déjà réserver pendant l’intervalle.
-Appel la fonction <strong>fusionDateEtHeure</strong> de NouvelleReservation.php.
-Récupère la date de début et on ajoute 1 minute.
-Récupère la date de fin et on enlève 1 minute.
-Appel la fonction <strong>verificationChevauchementMemeUtilisateur</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
 <p><strong>fusionDateEtHeure</strong> : fusionne la date et l’heure pour faire un type DATETIME et renvoie le datetime.</p>
 <p><strong>separeDateEtHeure</strong> :  sépare la date et l’heure pour avoir un type Date et l’autre Time et renvoie les deux type dans un tableau.</p>
 <p><strong>getMoyenParCategorie</strong> : Recherche les moyens en fonction de leur catégorie.
@@ -242,11 +237,6 @@ Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.
 Récupère la date de début et on ajoute 1 minute.
 Récupère la date de fin et on enlève 1 minute.
 Appel la fonction <strong>verificationChevauchementMemeMoyenIdDifferent</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
-<p><strong>chevauchementMemeUtilisateur</strong> : vérifie si l’utilisateur de la réservation n’a pas déjà réserver pendant l’intervalle sans compter les réservations qui ont le même Id.
-Appel la fonction <strong>fusionDateEtHeure</strong> de <em>NouvelleReservation.php</em> .
-Récupère la date de début et on ajoute 1 minute.
-Récupère la date de fin et on enlève 1 minute.
-Appel la fonction <strong>verificationChevauchementMemeUtilisateurIdDifferent</strong> de <em>GestionBdd.php</em> et la renvoie.</p>
 <p><strong>envoieMailAjout</strong> : Envoie un mail au responsable pour chaque ajout d’une réservation.
 Récupère toutes les infos de la réservation.
 Appel la fonction <strong>getResponsableParMoyen</strong> de <em>GestionBdd.php</em>.
@@ -286,7 +276,7 @@ Pour chaque rubrique du formulaire on vérifie si le $_POST contient le résulta
 <p>Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.</p>
 <p>Le menu déroulant Moyen appelle <strong>afficherLesCategorie</strong> et <strong>getMoyenParCategorie</strong> de <em>NouvelleReservation.php</em> pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.</p>
 <p>Le menu déroulant Encadrant appelle <strong>afficehrLesEncadrant</strong> de <em>NouvelleReservation.php</em> pour afficher tous les encadrants possibles.</p>
-<p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyen</strong> , <strong>chevauchementMemeUtilisateur</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+<p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyen</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via envoieMailAjout de <em>NouvelleReservation.php</em> et on crée la réservation via creationReservation de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
 </div>
 <div class="section" id="calendrier">
@@ -463,7 +453,7 @@ On appelle <strong>separeDateEtHeure</strong> de <em>NouvelleReservation.php</em
 Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur à choisir parmi les choix disponibles.</p>
 <p>Le menu déroulant Moyen appelle <strong>afficherLesCategorie</strong> et <strong>getMoyenParCategorie</strong> de <em>NouvelleReservation.php</em> pour pouvoir faire le menu déroulant et affiche tous les moyens et les catégories possible.</p>
 <p>Le menu déroulant Encadrant appelle <strong>afficehrLesEncadrant</strong> de <em>NouvelleReservation.php</em> pour afficher tous les encadrants possibles.</p>
-<p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyenIdDifferent</strong> , <strong>chevauchementMemeUtilisateurIdDifferent</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+<p>Pour vérifier les exceptions le fichier appelle <strong>chevauchementMemeMoyenIdDifferent</strong> , <strong>chevauchement2jours</strong> , <strong>chevauchement2heures</strong> de <em>NouvelleReservation.php</em> si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via <strong>envoieMailModif</strong> de <em>NouvelleReservation.php</em> et on crée la réservation via <strong>modifierReservation</strong> de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
 </div>
 <div class="section" id="supprimer-reservation">

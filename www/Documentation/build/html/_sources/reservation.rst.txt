@@ -138,11 +138,6 @@ Récupère la date de début et on ajoute 1 minute.
 Récupère la date de fin et on enlève 1 minute.
 Appel la fonction **verificationChevauchementMemeMoyen** de *GestionBdd.php* et la renvoie.
 
-chevauchementMemeUtilisateur : vérifie si l’utilisateur de la réservation n’a pas déjà réserver pendant l’intervalle.
-Appel la fonction **fusionDateEtHeure** de NouvelleReservation.php.
-Récupère la date de début et on ajoute 1 minute.
-Récupère la date de fin et on enlève 1 minute.
-Appel la fonction **verificationChevauchementMemeUtilisateur** de *GestionBdd.php* et la renvoie.
 
 **fusionDateEtHeure** : fusionne la date et l’heure pour faire un type DATETIME et renvoie le datetime.
 
@@ -171,11 +166,6 @@ Récupère la date de début et on ajoute 1 minute.
 Récupère la date de fin et on enlève 1 minute.
 Appel la fonction **verificationChevauchementMemeMoyenIdDifferent** de *GestionBdd.php* et la renvoie.
 
-**chevauchementMemeUtilisateur** : vérifie si l’utilisateur de la réservation n’a pas déjà réserver pendant l’intervalle sans compter les réservations qui ont le même Id.
-Appel la fonction **fusionDateEtHeure** de *NouvelleReservation.php* .
-Récupère la date de début et on ajoute 1 minute.
-Récupère la date de fin et on enlève 1 minute.
-Appel la fonction **verificationChevauchementMemeUtilisateurIdDifferent** de *GestionBdd.php* et la renvoie.
 
 **envoieMailAjout** : Envoie un mail au responsable pour chaque ajout d’une réservation.
 Récupère toutes les infos de la réservation.
@@ -227,7 +217,7 @@ Le menu déroulant Moyen appelle **afficherLesCategorie** et **getMoyenParCatego
 
 Le menu déroulant Encadrant appelle **afficehrLesEncadrant** de *NouvelleReservation.php* pour afficher tous les encadrants possibles.
 
-Pour vérifier les exceptions le fichier appelle **chevauchementMemeMoyen** , **chevauchementMemeUtilisateur** , **chevauchement2jours** , **chevauchement2heures** de *NouvelleReservation.php* si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+Pour vérifier les exceptions le fichier appelle **chevauchementMemeMoyen** , **chevauchement2jours** , **chevauchement2heures** de *NouvelleReservation.php* si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via envoieMailAjout de *NouvelleReservation.php* et on crée la réservation via creationReservation de *NouvelleReservation.php* et on envoie un message de succès.
 
 Calendrier
@@ -424,7 +414,7 @@ Le menu déroulant Moyen appelle **afficherLesCategorie** et **getMoyenParCatego
 
 Le menu déroulant Encadrant appelle **afficehrLesEncadrant** de *NouvelleReservation.php* pour afficher tous les encadrants possibles.
 
-Pour vérifier les exceptions le fichier appelle **chevauchementMemeMoyenIdDifferent** , **chevauchementMemeUtilisateurIdDifferent** , **chevauchement2jours** , **chevauchement2heures** de *NouvelleReservation.php* si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
+Pour vérifier les exceptions le fichier appelle **chevauchementMemeMoyenIdDifferent** , **chevauchement2jours** , **chevauchement2heures** de *NouvelleReservation.php* si une des 4 retournes true alors il y a une erreur et un message s’affiche en fonction de l’erreur.
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via **envoieMailModif** de *NouvelleReservation.php* et on crée la réservation via **modifierReservation** de *NouvelleReservation.php* et on envoie un message de succès.
 
 
