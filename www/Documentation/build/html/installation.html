@@ -53,6 +53,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">ICA PréProd :</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation">Utilisation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -184,6 +189,34 @@ Si on se connecte au site ICA Prod on retrouve :</p>
 <li><p>Utilisateur : <strong>Demander à un responsable</strong></p></li>
 <li><p>Mot de passe : <strong>Demander à un responsable</strong></p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre"></a></h2>
+<div class="section" id="id3">
+<h3>Installation<a class="headerlink" href="#id3" title="Lien permanent vers ce titre"></a></h3>
+<p>Pour travailler sur la doc il va faloir suivre différentes étapes :</p>
+<p>Premièrement prennez le temps de découvrir la syntaxe du langage utilisé, voici deux liens qui vous permettrons de mieux comprendre comment coder la documentation.
+<a class="reference external" href="https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Hyperlinks.html?highlight=url">Site tutoriel</a>
+<a class="reference external" href="http://espe-rtd-reflexpro.u-ga.fr/docs/sandbox2/fr/latest/syntaxe_rest.html#liens-externes">Tutoriel officiel français</a></p>
+<p>Pour l’organisation des fichiers et comment les créer vous pouvez suivre les tutoriels ci-dessus qui sont très explicites.</p>
+<p>Une fois votre page prete il est nécéssaire d’avoir ubuntu sur votre ordinateur voici un tutoriel pour installer une invite de commande ubuntu facilement et gratuitement.
+<a class="reference external" href="https://www.ssl.com/how-to/enable-linux-subsystem-install-ubuntu-windows-10/">Tutoriel ubuntu windows</a></p>
+<p>Enfin il est préférable pour la dernière étape d’avoir GitHub Desktop sur son ordinateur pour pouvoir envoyer sur le git vos modifications.</p>
+<p>Petit tutoriel pour l’installation complete de la doc : <a class="reference external" href="https://universux.com/creer-la-documentation-de-son-projet-facilement-et-gratuitement/">Installation doc</a></p>
+</div>
+<div class="section" id="utilisation">
+<h3>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre"></a></h3>
+<p>Pour créer une nouvelle page il vous suffit de créer un fichier en <strong>.rst</strong> et de l’ajouter au sommaire dans le fichier <em>index.rst</em>.
+Une fois vos modifications apportées lancez votre invite de commande ubuntu et placez vous dans le dossier lié au git. Pour cela entrez la commande : <em>cd [chemin d’accès]</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les crochets ne font pas parti de la commande</p>
+</div>
+<p>Un fois dans le bon répertoire entrez la commande : <em>make html</em></p>
+<p>Cette commande permettra de compiler tous les fichier et les fichiers se modifient automatiquement. Pour la dernière étape il ne vous reste plus qu’a commit les modifications sur le git
+et à tout push.
+Rendez vous ensuite sur le site readthedoc dans votre projet et observez la partie compilation. Une fois la compilation terminée il ne vous reste plus qu’a aller sur votre documentation et vos modifications ont été appliquées.</p>
 </div>
 </div>
 </div>

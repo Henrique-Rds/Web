@@ -93,3 +93,40 @@ ICA PréProd :
 - Lien vers la page PhpMyAdmin : `PhpMyAdmin Prod <https://laboffice.lamp.core-clouds.fr/phpMyAdmin/>`__
 - Utilisateur : **Demander à un responsable**
 - Mot de passe : **Demander à un responsable**
+
+Documentation
+=============
+
+Installation
+------------
+
+Pour travailler sur la doc il va faloir suivre différentes étapes : 
+
+Premièrement prennez le temps de découvrir la syntaxe du langage utilisé, voici deux liens qui vous permettrons de mieux comprendre comment coder la documentation.
+`Site tutoriel <https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Hyperlinks.html?highlight=url>`__
+`Tutoriel officiel français <http://espe-rtd-reflexpro.u-ga.fr/docs/sandbox2/fr/latest/syntaxe_rest.html#liens-externes>`__
+
+Pour l'organisation des fichiers et comment les créer vous pouvez suivre les tutoriels ci-dessus qui sont très explicites.
+
+Une fois votre page prete il est nécéssaire d'avoir ubuntu sur votre ordinateur voici un tutoriel pour installer une invite de commande ubuntu facilement et gratuitement.
+`Tutoriel ubuntu windows <https://www.ssl.com/how-to/enable-linux-subsystem-install-ubuntu-windows-10/>`__
+
+Enfin il est préférable pour la dernière étape d'avoir GitHub Desktop sur son ordinateur pour pouvoir envoyer sur le git vos modifications.
+
+Petit tutoriel pour l'installation complete de la doc : `Installation doc <https://universux.com/creer-la-documentation-de-son-projet-facilement-et-gratuitement/>`__
+
+Utilisation
+-----------
+
+Pour créer une nouvelle page il vous suffit de créer un fichier en **.rst** et de l'ajouter au sommaire dans le fichier *index.rst*.
+Une fois vos modifications apportées lancez votre invite de commande ubuntu et placez vous dans le dossier lié au git. Pour cela entrez la commande : *cd [chemin d'accès]*
+
+.. note::
+
+    Les crochets ne font pas parti de la commande 
+
+Un fois dans le bon répertoire entrez la commande : *make html*
+
+Cette commande permettra de compiler tous les fichier et les fichiers se modifient automatiquement. Pour la dernière étape il ne vous reste plus qu'a commit les modifications sur le git
+et à tout push.
+Rendez vous ensuite sur le site readthedoc dans votre projet et observez la partie compilation. Une fois la compilation terminée il ne vous reste plus qu'a aller sur votre documentation et vos modifications ont été appliquées.
