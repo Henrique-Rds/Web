@@ -3,7 +3,6 @@
 	/**
     * Améliorations à apporter :
     */
-
 	require("codes snippet/GestionBdd.php");
 	$bdd = new GestionBdd();
 
